@@ -858,7 +858,7 @@ MonoBehaviour:
   horizontalSpeed: 100
   verticalSpeed: 100
   controller: {fileID: 1037109938}
-  speed: 50
+  speed: 30
   gravity: -15
   jumpForce: 1
 --- !u!4 &1037109940
