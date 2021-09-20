@@ -11,8 +11,8 @@ public class VolumenCodigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
-        AudioListener.volume = slider.value;
+        sliderValue = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
+        
         RevisarSiEstoyMute();
 
     }
@@ -38,7 +38,7 @@ public class VolumenCodigo : MonoBehaviour
     void OnGUI()
     {
         //Create a horizontal Slider that controls volume levels. Its highest value is 1 and lowest is 0
-        sliderValue = GUI.HorizontalSlider(new Rect(25, 25, 200, 60), sliderValue, 0.0F, 1.0F);
+        //sliderValue = GUI.HorizontalSlider(new Rect(25, 25, 200, 60), sliderValue, 0.0F, 1.0F);
         //Makes the volume of the Audio match the Slider value
         AudioListener.volume = sliderValue;
     }
