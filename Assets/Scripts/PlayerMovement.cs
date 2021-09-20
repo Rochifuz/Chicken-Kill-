@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Camara
     public Transform cam;
     float vMouse;
     float hMouse;
     float yReal = 0.0f;
     public float horizontalSpeed;
     public float verticalSpeed;
+    //Movimiento
     public CharacterController controller;
     public float speed = 10f;
     float x;
     float z;
     Vector3 move; 
+    //Gravedad
+    Vector3 velocity;
+    public float gravity = -15f;
+    bool isGrounded = false; 
+    //Salto
+    public float jumpForce = 1f;
+    float jumpValue;
+
+
   
 
 
@@ -22,13 +33,26 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        jumpValue = Mathf.Sqrt(jumpForce * -2 * gravity);
     }
 
     // Update is called once per frame
     void Update()
     {
         LookMouse();
+
+        if(isGrounded ==true && velocity.y < 0)
+        {
+            velocity.y = gravity;
+        }
+
+
         Movement();
+        Jump();
+
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 
     void LookMouse()
@@ -54,4 +78,27 @@ public class PlayerMovement : MonoBehaviour
         move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime); 
     }
+
+    void Jump()
+    {
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+            isGrounded = false;
+            velocity.y = jumpValue;
+        }
+    }
+
+    //Cuando el personaje colisiona con algo
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.collider.CompareTag("floor"))
+        {
+            if(isGrounded == false)
+            {
+                isGrounded = true;
+            }
+        }
+    }
 }
+
