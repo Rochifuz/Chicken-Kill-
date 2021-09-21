@@ -5,21 +5,30 @@ using UnityEngine;
 public class ControlGenerador : MonoBehaviour
 {
     public GameObject prefabEnemigos;
+    public int numeroEnemigos;
+    public int numeroOleada = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        GeneradorEnemigos();
+        GeneradorEnemigos(numeroOleada);
     }
 
     // Update is called once per frame
     void Update()
     {
+        numeroEnemigos = FindObjectsOfType<Enemigos>().Length;
 
+        if (numeroEnemigos == 0)
+        {
+            numeroOleada++;
+            GeneradorEnemigos(numeroOleada);
+        }
     }
 
-    void GeneradorEnemigos ()
+    void GeneradorEnemigos (int enemigosAGenerar)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < enemigosAGenerar; i++)
         {
             Instantiate(prefabEnemigos, DamePosicionGeneracion(), prefabEnemigos.transform.rotation);
         }

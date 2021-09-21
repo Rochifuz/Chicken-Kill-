@@ -20,5 +20,10 @@ public class Enemigos : MonoBehaviour
         Vector3 vectorAlObjetivo = (jugador.transform.position - transform.position).normalized;
 
         rbEnemigo.AddForce(vectorAlObjetivo * velocidad);
+
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
