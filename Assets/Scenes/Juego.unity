@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 614936809}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -920,7 +920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844501560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7300049, y: -0.54999995, z: 0.5599853}
+  m_LocalPosition: {x: 0.58, y: -0.54999995, z: 0.21}
   m_LocalScale: {x: 0.25837487, y: 0.29128534, z: 1.6798}
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -1354,7 +1354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037109937}
   m_LocalRotation: {x: -0, y: 0.996812, z: -0, w: 0.07978705}
-  m_LocalPosition: {x: -94.4, y: 1.77, z: -24.6}
+  m_LocalPosition: {x: -93.3, y: 1.77, z: -22.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1193483717}
