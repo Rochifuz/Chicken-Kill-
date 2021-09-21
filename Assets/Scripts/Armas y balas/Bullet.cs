@@ -26,4 +26,14 @@ public class Bullet : MonoBehaviour
     {
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+      
+        if ( other.gameObject.CompareTag("Enemigo"))
+        {
+            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();
+            Vector3 impacto = (other.transform.position - transform.position);
+            rbEnemigo.AddForce(impacto * 5, ForceMode.Impulse);
+        }
+    }
 }
