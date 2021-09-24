@@ -26,12 +26,13 @@ public class Bullet : MonoBehaviour
     {
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
     }
+    // cuando la bala impacte con el tag enemigo , se le agregue una fuerza de impacto.
     private void OnTriggerEnter(Collider other)
     {
       
-        if ( other.gameObject.CompareTag("Enemigo"))
+        if ( other.gameObject.CompareTag("Enemigo"))   // si collisiona con el tag enemigo.
         {
-            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();
+            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>(); 
             Vector3 impacto = (other.transform.position - transform.position);
             rbEnemigo.AddForce(impacto * 5, ForceMode.Impulse);
         }
