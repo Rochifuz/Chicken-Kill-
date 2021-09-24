@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
     {
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collider other)
     {
       
         if ( other.gameObject.CompareTag("Enemigo"))
