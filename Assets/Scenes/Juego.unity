@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06ddc836b091314fa015c8e5db1667f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabEnemigos: {fileID: 4834168669999481461, guid: 72c625780426eba47b922d6cb4c7aae3, type: 3}
+  prefabEnemigos: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
   numeroEnemigos: 0
   numeroMaxOleadas: 10
   oleadaInicial: 1
