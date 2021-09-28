@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemigos : MonoBehaviour
+public class Enemigos : MonoBehaviour, IDamage
 {
     public GameObject target;
     float distanceToTarget;
+
+    public int life = 5;
 
     NavMeshAgent agent;
 
@@ -17,6 +19,24 @@ public class Enemigos : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
 
 
+    }
+
+    public void DoDamage(int vld, bool isPlayer)
+    {
+        Debug.Log("Daño hecho = " + vld + " isPlayer = " + isPlayer);
+        if(isPlayer == true)
+        {
+            life -= vld;
+            if(life <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -33,4 +53,6 @@ public class Enemigos : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    
 }

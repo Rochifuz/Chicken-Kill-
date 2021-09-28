@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
-{
+{ 
+
    public float speed = 8f;
    public float lifeDuration = 2f;
    float lifeTimer;
+   public int attack = 10;
 
-   private void Start()
+   public bool shootByPlayer;
+
+   private void OnEnable()
    {
        lifeTimer = lifeDuration;
    }
@@ -30,15 +34,24 @@ public class Bullet : MonoBehaviour
     
     
     // cuando la bala impacte con el tag enemigo , se le agregue una fuerza de impacto.
-    private void OncollisionEnter (Collider other)
+    private void OnTriggerEnter (Collider other)
 
     {
-      
+
         if ( other.gameObject.CompareTag("Enemigo"))   // si collisiona con el tag enemigo.
         {
             Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>(); 
             Vector3 impacto = (other.transform.position - transform.position);
             rbEnemigo.AddForce(impacto * 10, ForceMode.Impulse);
         }
+
+        Debug.Log("Bullet golpea = " + other.name);
+
+        IDamage damage = other.GetComponent<IDamage>();
+        if(damage != null)
+        {
+            damage.DoDamage(attack, shootByPlayer);
+        }
+        gameObject.SetActive(false);
     }
 }

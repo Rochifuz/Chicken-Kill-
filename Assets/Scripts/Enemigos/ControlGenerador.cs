@@ -57,8 +57,8 @@ public class ControlGenerador : MonoBehaviour
 
     Vector3 DamePosicionGeneracion ()
     {
-        float posXGeneracion = Random.Range(-99, -30);
-        float posZGeneracion = Random.Range(-16, -54);
+        float posXGeneracion = Random.Range(-99, -69);
+        float posZGeneracion = Random.Range(-19, -50);
 
         Vector3 posAleatoria = new Vector3(posXGeneracion, 2, posZGeneracion);
     
