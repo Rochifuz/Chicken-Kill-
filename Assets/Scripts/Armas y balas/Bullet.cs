@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
         {
             Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>(); 
             Vector3 impacto = (other.transform.position - transform.position);
-            rbEnemigo.AddForce(impacto * 10, ForceMode.Impulse);
+            rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);
         }
 
         Debug.Log("Bullet golpea = " + other.name);
