@@ -8,7 +8,7 @@ public class Enemigos : MonoBehaviour, IDamage
     public GameObject target;
     float distanceToTarget;
 
-    public int life = 5;
+    public int life = 15;
 
     NavMeshAgent agent;
 
@@ -27,7 +27,7 @@ public class Enemigos : MonoBehaviour, IDamage
         if(isPlayer == true)
         {
             life -= vld;
-            if(life <= 0)
+            if(life < 0)
             {
                 Die();
             }

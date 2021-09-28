@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
    public float speed = 8f;
    public float lifeDuration = 2f;
    float lifeTimer;
-   public int attack = 10;
+   public int attack = 5;
 
    public bool shootByPlayer;
 

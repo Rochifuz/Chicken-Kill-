@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  life: 15
 --- !u!195 &-5576779013458135314
 NavMeshAgent:
   m_ObjectHideFlags: 0
