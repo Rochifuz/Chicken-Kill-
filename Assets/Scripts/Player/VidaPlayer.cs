@@ -11,10 +11,7 @@ public class VidaPlayer : MonoBehaviour
 
     void Die()
     {
-        if (vida < 0)
-        {
-          Destroy(gameObject);
-        }
+       Destroy(gameObject);        
     }
 
 
