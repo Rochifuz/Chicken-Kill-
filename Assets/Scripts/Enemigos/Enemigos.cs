@@ -7,8 +7,11 @@ public class Enemigos : MonoBehaviour, IDamage
 {
     public GameObject target;
     float distanceToTarget;
+    public int daño = 10;
 
     public int life = 15;
+
+    public bool shootByPlayer;
 
     NavMeshAgent agent;
 
@@ -39,6 +42,11 @@ public class Enemigos : MonoBehaviour, IDamage
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter (Collision collision)
+    {
+        Debug.Log("Gallina golpea = ");
+        collision.gameObject.GetComponent<VidaPlayer>().vida -= daño;              
+    }
     // Update is called once per frame
     void Update()
     {

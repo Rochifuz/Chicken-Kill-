@@ -9,9 +9,15 @@ public class VidaPlayer : MonoBehaviour
 
     public Image barradeVida;
 
+    void Die()
+    {
+        if (vida < 0)
+        {
+          Destroy(gameObject);
+        }
+    }
 
 
- 
     void Update()
     {
        vida = Mathf.Clamp(vida, 0, 100);

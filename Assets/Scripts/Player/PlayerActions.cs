@@ -9,7 +9,6 @@ public class PlayerActions : MonoBehaviour, IDamage
     public Transform cam;
     public GameObject bulletPrefab;
     public LayerMask ignoreLayer;
-
     RaycastHit hit;
 
     private void Update()
