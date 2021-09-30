@@ -14,15 +14,6 @@ public class VidaPlayer : MonoBehaviour
        Destroy(gameObject);        
     }
 
-
-<<<<<<< Updated upstream
-=======
-    void Die()
-    {
-        Destroy(gameObject);
-    }
-
->>>>>>> Stashed changes
     void Update()
     {
        vida = Mathf.Clamp(vida, 0, 100);
