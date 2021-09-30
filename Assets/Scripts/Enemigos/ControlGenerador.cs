@@ -27,13 +27,16 @@ public class ControlGenerador : MonoBehaviour
             if (oleadaActual < numeroMaxOleadas)
             {                oleadaActual++;
                 GeneradorEnemigos(oleadaActual);
+
                 if (oleadaActual == 11)
+
                 {
                     Ganar.show();
                 }
             }
             
         }
+        
     }
 
     void GeneradorEnemigos (int oleadas)
