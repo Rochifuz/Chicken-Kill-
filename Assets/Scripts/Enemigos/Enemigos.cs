@@ -23,7 +23,7 @@ public class Enemigos : MonoBehaviour, IDamage
 
 
     }
-
+    // este codigo es el daño de la bala a las gallinas
     public void DoDamage(int vld, bool isPlayer)
     {
         Debug.Log("Daño hecho = " + vld + " isPlayer = " + isPlayer);
