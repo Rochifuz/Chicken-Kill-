@@ -41,7 +41,7 @@ public class Enemigos : MonoBehaviour, IDamage
     {
         Destroy(gameObject);
     }
-
+    // este codigo es cuando la gallina colisiona con el jugador quite el daño dicho anteriormente
     private void OnCollisionEnter (Collision collision)
     {
         Debug.Log("Gallina golpea = ");
