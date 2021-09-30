@@ -15,9 +15,22 @@ public class VidaPlayer : MonoBehaviour
     }
 
 
+<<<<<<< Updated upstream
+=======
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+>>>>>>> Stashed changes
     void Update()
     {
        vida = Mathf.Clamp(vida, 0, 100);
        barradeVida.fillAmount = vida / 100;
+        if (vida == 0)
+        {
+            Ganar.show1();
+            Die();
+        }
     }
 }
