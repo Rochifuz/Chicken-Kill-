@@ -25,7 +25,7 @@ public class Enemigos : MonoBehaviour, IDamage
     }
     // este codigo es el daño de la bala a las gallinas
     public void DoDamage(int vld, bool isPlayer)
-    {
+    {//aqui se muestra cuanto daño le hemos hecho a la gallina y la funcion para restarle vida y que se destruya
         Debug.Log("Daño hecho = " + vld + " isPlayer = " + isPlayer);
         if(isPlayer == true)
         {
@@ -36,7 +36,7 @@ public class Enemigos : MonoBehaviour, IDamage
             }
         }
     }
-
+    //funcion de muerte de la gallina
     void Die()
     {
         Destroy(gameObject);
@@ -50,15 +50,16 @@ public class Enemigos : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
+        //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
         Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-        transform.LookAt(posNoRot);
+        transform.LookAt(posNoRot); //para que la gallina nos mire
         distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
-
-        agent.SetDestination(target.transform.position);
+        //distance calcula la distancia entre la gallina y nosotros
+        agent.SetDestination(target.transform.position); //para que la gallina nos persiga
 
         if (transform.position.y < -10)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //se destruye la gallina si se cae 
         }
     }
 

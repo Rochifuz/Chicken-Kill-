@@ -17,6 +17,7 @@ public class ObjectPooling : MonoBehaviour
     
     void Awake()
     {
+        //Este codigo nos da una lista de 5 balas para que no se creen extras y se ocupe mucho espacio en el juego
         instance = this;
         bullets = new List<BulletInfo>(bulletAmount);
         for(int i = 0; i<bulletAmount; i++)
@@ -39,10 +40,11 @@ public class ObjectPooling : MonoBehaviour
             {
                 bullets[i].prefab.SetActive(true);
                 bullets[i].scriptBullet.shootByPlayer = isPlayer;
-
+                //esto nos devuelve a true una bala que paso a estar en falso y nos dice quien disparo
                 return bullets[i].prefab;
             }
         }
+        // Esto crea una nueva bala si ya se lleno la lista de las 5 balas
         BulletInfo BPrefab;
         BPrefab.prefab = Instantiate(bulletPrefab);
         BPrefab.prefab.transform.SetParent(transform);

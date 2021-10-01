@@ -10,13 +10,13 @@ public class Bullet : MonoBehaviour
    float lifeTimer;
    public int attack = 5;
 
-   public bool shootByPlayer;
-
+   public bool shootByPlayer;//un bool para saber si es el jugador quien disparo la bala o la gallina
+    //duracion de la bala
    private void OnEnable()
    {
        lifeTimer = lifeDuration;
    }
-
+    //si el lifeTimer es menor a cero quiere decir que la bala no existe o no esta activada
    private void Update()
    {
        lifeTimer -= Time.deltaTime;
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
            gameObject.SetActive(false);
        }
     }
-
+    //calcula la velocidad de la bala
     private void FixedUpdate()
     {
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
@@ -44,12 +44,12 @@ public class Bullet : MonoBehaviour
             Vector3 impacto = (other.transform.position - transform.position);
             rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);
         }
-
+        // esto dice a quien golpea la bala
         Debug.Log("Bullet golpea = " + other.name);
 
         IDamage damage = other.GetComponent<IDamage>();
         if(damage != null)
-        {
+        {//aca se define quien golpea y cuanto daño realiza por medio de la interfaz
             damage.DoDamage(attack, shootByPlayer);
         }
         gameObject.SetActive(false);
