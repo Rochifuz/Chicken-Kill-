@@ -10,6 +10,8 @@ public class PlayerActions : MonoBehaviour, IDamage
     public GameObject bulletPrefab;
     public LayerMask ignoreLayer;
     RaycastHit hit;
+    public float shotRate = 0.5f;
+    public float shotRateTime = 0;
 
     private void Update()
     {
@@ -18,7 +20,10 @@ public class PlayerActions : MonoBehaviour, IDamage
 
         if(Input.GetMouseButtonDown(0))
         {
-
+            if(Time.time > shotRateTime)
+            {
+                shotRateTime = Time.time + shotRate;
+            
             Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);
 
@@ -36,7 +41,7 @@ public class PlayerActions : MonoBehaviour, IDamage
                 Vector3 dir = cam.position + direction * 10f;
                 bulletObj.transform.LookAt(dir);
             }
-            
+            }
         }
     }
     public void DoDamage(int vld, bool isPlayer)
