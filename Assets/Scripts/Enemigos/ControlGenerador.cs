@@ -28,7 +28,7 @@ public class ControlGenerador : MonoBehaviour
             {                oleadaActual++;
                 GeneradorEnemigos(oleadaActual);
 
-                if (oleadaActual == 11)
+                if (oleadaActual == 10)
 
                 {
                     Ganar.show();
