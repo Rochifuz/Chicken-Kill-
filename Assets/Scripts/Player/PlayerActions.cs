@@ -12,6 +12,7 @@ public class PlayerActions : MonoBehaviour, IDamage
     RaycastHit hit;
     public float shotRate = 0.5f;
     public float shotRateTime = 0;
+    public int numeroArma; 
 
     private void Update()
     {
