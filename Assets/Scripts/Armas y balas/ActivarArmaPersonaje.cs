@@ -6,7 +6,7 @@ public class ActivarArmaPersonaje : MonoBehaviour
 {
     public AgarrarArmas agarrarArma;
     public int numeroArma;
-    private int armaSeleccionada;
+    public int armaSeleccionada;
     // Start is called before the first frame update
     void Start()
     {
