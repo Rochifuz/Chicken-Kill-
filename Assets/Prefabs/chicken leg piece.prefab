@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaPlayer: 10
   tiempo: 0
-  PrefabPataMuslo: {fileID: 0}
+  PrefabPataMuslo: {fileID: 2921134319588251144}
 --- !u!54 &-3857717525924005070
 Rigidbody:
   m_ObjectHideFlags: 0

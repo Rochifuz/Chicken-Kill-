@@ -30,7 +30,7 @@ public class VidaPataParaPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TiempoDePataMuslo();
     }
     private void OnCollisionEnter(Collision collision)
     {
