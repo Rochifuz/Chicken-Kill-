@@ -10,8 +10,9 @@ public class PlayerActions : MonoBehaviour, IDamage
     public GameObject bulletPrefab;
     public LayerMask ignoreLayer;
     RaycastHit hit;
-    public float shotRate = 0.5f;
-    public float shotRate1 = 2.1f;
+    public float shotRateGlock = 1.5f;
+    public float shotRateUzi = 0.8f;
+    public float shotRateAk = 0.3f;
     public float shotRateTime = 0;
     public int numeroArma; 
 
@@ -35,7 +36,7 @@ public class PlayerActions : MonoBehaviour, IDamage
             //le da una tiempo de recuperacion para volver a disparar
             if(Time.time > shotRateTime)
             {
-                shotRateTime = Time.time + shotRate;
+                shotRateTime = Time.time + shotRateAk;
             
             Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
@@ -62,7 +63,7 @@ public class PlayerActions : MonoBehaviour, IDamage
             if(Time.time > shotRateTime)
             {
             
-            shotRateTime = Time.time + shotRate1;
+            shotRateTime = Time.time + shotRateUzi;
             
             Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
@@ -89,7 +90,7 @@ public class PlayerActions : MonoBehaviour, IDamage
             //le da una tiempo de recuperacion para volver a disparar
             if(Time.time > shotRateTime)
             {
-                shotRateTime = Time.time + shotRate;
+                shotRateTime = Time.time + shotRateGlock;
             
             Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala

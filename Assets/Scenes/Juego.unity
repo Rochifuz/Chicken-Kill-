@@ -1721,8 +1721,9 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
+  shotRate2: 0.5
+  shotRate1: 0.5
   shotRate: 0.5
-  shotRate1: 2.1
   shotRateTime: 0
   numeroArma: 0
 --- !u!114 &1037109942
@@ -2235,7 +2236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agarrarArma: {fileID: 0}
   numeroArma: 1
-  armaSeleccionada: 0
 --- !u!65 &1199483538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2640,7 +2640,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agarrarArma: {fileID: 0}
   numeroArma: 2
-  armaSeleccionada: 0
 --- !u!65 &1665928840
 BoxCollider:
   m_ObjectHideFlags: 0
