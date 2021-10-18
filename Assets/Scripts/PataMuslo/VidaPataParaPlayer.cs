@@ -5,32 +5,20 @@ using UnityEngine;
 public class VidaPataParaPlayer : MonoBehaviour
 {
     public int vidaPlayer = 10;
-
     public float tiempo = 0;
-    public GameObject PrefabPataMuslo;
-    // Start is called before the first frame update
+    public int tiempoPata = 5;
 
-    public void TiempoDePataMuslo()
-    {
-        tiempo = tiempo + Time.time;
-        while (tiempo == 10)
-        {
-            
-            Destroy(PrefabPataMuslo);
-            tiempo = 0;
-        }
-        
-    }
+    // Start is called before the first frame update
 
     void Start()
     {
-        PrefabPataMuslo = GetComponent<Enemigos>().PataMuslo;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        diePata();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -42,6 +30,16 @@ public class VidaPataParaPlayer : MonoBehaviour
         }
     }
 
+   void diePata()
+    {
+        tiempo = tiempo + Time.deltaTime;
+        
+        if(tiempo > tiempoPata)
+        {
+             Destroy(gameObject);
+        }
+        
+    }
     
 } 
 
