@@ -17,13 +17,15 @@ public class PlayerActions : MonoBehaviour, IDamage
 
     
     private void Start(){
-        numeroArma = GetComponent<ActivarArmaPersonaje>().armaSeleccionada;
+        
     }
 
 
 
     private void Update()
     {
+        numeroArma = GetComponent<AgarrarArmas>().numeroArmaActiva;
+        Debug.Log(numeroArma);
         Debug.DrawRay(cam.position, cam.forward * 100f, Color.red);// traza una linea de la camara
         Debug.DrawRay(posGun.position, cam.forward * 100f, Color.blue);//traza una linea desde el arma
 

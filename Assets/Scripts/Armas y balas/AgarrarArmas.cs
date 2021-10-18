@@ -5,17 +5,9 @@ using UnityEngine;
 public class AgarrarArmas : MonoBehaviour
 {
     public GameObject[] armas;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int numeroArmaActiva;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Start is called before the first frame update 
 
     public void ActivarArmar(int numero)
     {
