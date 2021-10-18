@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
 
         if ( other.gameObject.CompareTag("Enemigo"))   // si collisiona con el tag enemigo.
         {
-            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>(); 
+            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();      
             Vector3 impacto = (other.transform.position - transform.position);
             rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);
         }

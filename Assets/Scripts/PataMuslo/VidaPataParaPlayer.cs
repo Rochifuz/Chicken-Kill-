@@ -19,6 +19,8 @@ public class VidaPataParaPlayer : MonoBehaviour
     void Update()
     {
         diePata();
+
+
     }
     private void OnCollisionEnter(Collision collision)
     {

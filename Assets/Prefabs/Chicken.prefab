@@ -1837,12 +1837,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213206596740143703}
+  - component: {fileID: -8135044967990750051}
   - component: {fileID: 54186851546604756}
   - component: {fileID: 136373561480327732}
-  - component: {fileID: 723265912}
+  - component: {fileID: 2282508327052008930}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: Chicken
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1862,6 +1863,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8135044967990750051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213206596740143696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a9ea1f3c8ebf14d8a90e5952fe8e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  "da\xF1o": 5
+  life: 15
+  shootByPlayer: 0
+  PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
 --- !u!54 &54186851546604756
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1873,11 +1891,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 110
-  m_CollisionDetection: 3
+  m_CollisionDetection: 0
 --- !u!136 &136373561480327732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1888,28 +1906,32 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.2514994
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &723265912
-MonoBehaviour:
+  m_Center: {x: 0, y: 0.5, z: 0.2}
+--- !u!195 &2282508327052008930
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9213206596740143696}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7e021d804bceb74489e88b15f242c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FrontLegL: {fileID: 0}
-  FrontLegR: {fileID: 0}
-  RearLegL: {fileID: 0}
-  RearLegR: {fileID: 0}
-  moveAngle: 90
-  movSpeed: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &9213206596849299574
 GameObject:
   m_ObjectHideFlags: 0
