@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class VidaPlayer : MonoBehaviour
 {
     public float vida = 100;
-
+    
     public Image barradeVida;
+    
 
     void Die()
     {
@@ -23,5 +24,7 @@ public class VidaPlayer : MonoBehaviour
             Ganar.show1();
             Die();
         }
+        
     }
+    
 }

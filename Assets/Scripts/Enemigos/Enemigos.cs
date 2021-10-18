@@ -17,6 +17,7 @@ public class Enemigos : MonoBehaviour, IDamage
 
     public GameObject PataMuslo;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class Enemigos : MonoBehaviour, IDamage
     {
         Destroy(gameObject);
         Instantiate(PataMuslo, transform.position, transform.rotation);
+       
     }
     
 

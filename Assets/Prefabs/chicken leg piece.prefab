@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2921134319588411944}
   - component: {fileID: 2921134319591311880}
   - component: {fileID: 2921134319590181064}
-  - component: {fileID: 8934347943743828141}
   - component: {fileID: -2559586423681311067}
-  - component: {fileID: 9022748612922800965}
+  - component: {fileID: 1881887102383442909}
+  - component: {fileID: -3857717525924005070}
   m_Layer: 0
   m_Name: chicken leg piece
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921134319588251144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2642891, y: 0.047939062, z: -0.2620712}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0.2921, y: 0.0479, z: -0.2564}
+  m_LocalScale: {x: 2.2871063, y: 2, z: 2.8072643}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,7 +84,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8934347943743828141
+--- !u!65 &-2559586423681311067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921134319588251144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19386348, y: 0.07254854, z: 0.14432907}
+  m_Center: {x: 0, y: 0.0008767266, z: -0.00003677234}
+--- !u!114 &1881887102383442909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921134319588251144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a3555f92178b8479ceb1ed832a3d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaPlayer: 10
+  tiempo: 0
+  PrefabPataMuslo: {fileID: 0}
+--- !u!54 &-3857717525924005070
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,28 +128,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &-2559586423681311067
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2921134319588251144}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.19386348, y: 0.07254854, z: 0.14432907}
-  m_Center: {x: 0, y: 0.0008767266, z: -0.00003677234}
---- !u!114 &9022748612922800965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2921134319588251144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e7c2fbc3b297a4c80dd8d53ad0bcf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

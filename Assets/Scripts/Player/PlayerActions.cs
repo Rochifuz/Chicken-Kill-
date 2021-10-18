@@ -113,6 +113,8 @@ public class PlayerActions : MonoBehaviour, IDamage
     public void DoDamage(int vld, bool isPlayer)
     {//daño que se recibe y por parte de quien
         Debug.Log("Recibi Daño = " + vld + "isPlayer = " +isPlayer);
+
+        
     }
 }
 

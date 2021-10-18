@@ -1643,6 +1643,7 @@ GameObject:
   - component: {fileID: 1037109943}
   - component: {fileID: 1037109944}
   - component: {fileID: 1037109945}
+  - component: {fileID: 1037109946}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1721,6 +1722,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   shotRate: 0.5
+  shotRate1: 2.1
   shotRateTime: 0
   numeroArma: 0
 --- !u!114 &1037109942
@@ -1857,6 +1859,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1037109946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037109937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.5957417, z: 1}
+  m_Center: {x: 0, y: -0.1605432, z: 0}
 --- !u!1001 &1112966148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2219,6 +2234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agarrarArma: {fileID: 0}
   numeroArma: 1
+  armaSeleccionada: 0
 --- !u!65 &1199483538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2623,6 +2639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agarrarArma: {fileID: 0}
   numeroArma: 2
+  armaSeleccionada: 0
 --- !u!65 &1665928840
 BoxCollider:
   m_ObjectHideFlags: 0
