@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlGenerador : MonoBehaviour
 {
     public GameObject prefabEnemigos;
+    public GameObject prefabEnemigos2;
     public int numeroEnemigos;
     // public int enemigoInicial = 1; // cant de enemigos en la primer oleada
     public int numeroMaxOleadas = 10; // la cant maxima de oleadas del nivel
@@ -49,6 +50,15 @@ public class ControlGenerador : MonoBehaviour
             {
                 Instantiate(prefabEnemigos, DamePosicionGeneracion(), prefabEnemigos.transform.rotation);
             }
+           
+        }
+
+        if (oleadas >= 2)
+        {
+            for (int i = 0; i < incrementoEnemigos(oleadas - oleadaInicial + 1); i++)
+            {
+                Instantiate(prefabEnemigos2, DamePosicionGeneracion(), prefabEnemigos2.transform.rotation);
+            }
         }
     }
 
@@ -56,7 +66,7 @@ public class ControlGenerador : MonoBehaviour
     {
         if (oleadas > 15)
         {
-            return oleadas^4;
+            return oleadas^2;
 
         }
         else return oleadas * 2;
