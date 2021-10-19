@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VidaPlayer : MonoBehaviour
+public class VidaPlayer : MonoBehaviour 
 {
     public float vida = 100;
     

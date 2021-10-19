@@ -1722,9 +1722,9 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  shotRate2: 0.5
-  shotRate1: 0.5
-  shotRate: 0.5
+  shotRateGlock: 1.5
+  shotRateUzi: 0.8
+  shotRateAk: 0.3
   shotRateTime: 0
   numeroArma: 0
 --- !u!114 &1037109942
