@@ -15,4 +15,5 @@ public class Controlador : MonoBehaviour
         Application.Quit();
         Debug.Log(" Salir del juego");
     }
+   
 }

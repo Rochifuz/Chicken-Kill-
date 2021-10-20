@@ -23,6 +23,8 @@ public class VidaPlayer : MonoBehaviour
         {
             Ganar.show1();
             Die();
+            
+            
         }
         
     }

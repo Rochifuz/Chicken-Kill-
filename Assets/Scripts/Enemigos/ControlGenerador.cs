@@ -32,7 +32,9 @@ public class ControlGenerador : MonoBehaviour
                 if (oleadaActual == 10)
 
                 {
+                    Time.timeScale = 0;
                     Ganar.show();
+                    Ganar.show2();
                 }
             }
             

@@ -14,8 +14,8 @@ public class PlayerActions : MonoBehaviour, IDamage
     public float shotRateUzi = 0.8f;
     public float shotRateAk = 0.3f;
     public float shotRateTime = 0;
-    public int numeroArma; 
-
+    public int numeroArma;
+    
     
     private void Start(){
         
@@ -25,6 +25,8 @@ public class PlayerActions : MonoBehaviour, IDamage
 
     private void Update()
     {
+        
+
         numeroArma = GetComponent<AgarrarArmas>().numeroArmaActiva;
         Debug.Log(numeroArma);
         Debug.DrawRay(cam.position, cam.forward * 100f, Color.red);// traza una linea de la camara
@@ -119,5 +121,7 @@ public class PlayerActions : MonoBehaviour, IDamage
 
         
     }
+
+    
 }
 
