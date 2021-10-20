@@ -11,11 +11,11 @@ public class ControlGenerador : MonoBehaviour
     public int numeroMaxOleadas = 10; // la cant maxima de oleadas del nivel
     public int oleadaInicial = 1; //oleada en la que comienza a instanciar enemigos
     private int oleadaActual = 1; //en que oleada me encuentro
-
+    int cantidadEnemigos = 1;
     // Start is called before the first frame update
     void Start()
     {
-        GeneradorEnemigos(oleadaActual);
+        GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);
     }
 
     // Update is called once per frame
@@ -27,8 +27,16 @@ public class ControlGenerador : MonoBehaviour
         {
             if (oleadaActual < numeroMaxOleadas)
             {                oleadaActual++;
-                GeneradorEnemigos(oleadaActual);
-
+                cantidadEnemigos = incrementoEnemigos(oleadaActual - oleadaInicial + 1);
+                if(oleadaActual >= 2)
+                {
+                    cantidadEnemigos = cantidadEnemigos / 2;
+                }
+                GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);
+                if (oleadaActual >= 2)
+                {
+                    GeneradorEnemigos(cantidadEnemigos, prefabEnemigos2);
+                }
                 if (oleadaActual == 10)
 
                 {
@@ -40,26 +48,16 @@ public class ControlGenerador : MonoBehaviour
         
     }
 
-    void GeneradorEnemigos (int oleadas)
+    void GeneradorEnemigos (int cantidadEnemigos, GameObject instanciaEnemigo)
     {
-        if (oleadas >= oleadaInicial)
-        {
-
-
-            for (int i = 0; i < incrementoEnemigos(oleadas - oleadaInicial+1); i++)
+       
+                             
+            for (int i = 0; i < cantidadEnemigos; i++)
             {
-                Instantiate(prefabEnemigos, DamePosicionGeneracion(), prefabEnemigos.transform.rotation);
+                Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);                                                
             }
            
-        }
-
-        if (oleadas >= 2)
-        {
-            for (int i = 0; i < incrementoEnemigos(oleadas - oleadaInicial + 1); i++)
-            {
-                Instantiate(prefabEnemigos2, DamePosicionGeneracion(), prefabEnemigos2.transform.rotation);
-            }
-        }
+               
     }
 
     int incrementoEnemigos (int oleadas)
