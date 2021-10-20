@@ -937,7 +937,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 540163559}
-  - component: {fileID: 540163558}
   m_Layer: 0
   m_Name: Musica
   m_TagString: Untagged
@@ -945,6 +944,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!82 &540163558
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1041,6 +1041,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> Stashed changes
 --- !u!4 &540163559
 Transform:
   m_ObjectHideFlags: 0

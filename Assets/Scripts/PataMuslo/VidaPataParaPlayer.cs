@@ -8,19 +8,42 @@ public class VidaPataParaPlayer : MonoBehaviour
     public float tiempo = 0;
     public int tiempoPata = 5;
 
+<<<<<<< Updated upstream
     // Start is called before the first frame update
 
     void Start()
     {
 
+=======
+     void TiempoDePataMuslo()
+    {
+        tiempo = tiempo + Time.time;
+        if (tiempo > 5)
+        {
+            
+            Destroy(gameObject);
+            
+            Debug.Log("Destroy");
+        }
+        
+    }
+
+    void Start()
+    {
+       
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         diePata();
 
 
+=======
+        TiempoDePataMuslo();
+>>>>>>> Stashed changes
     }
     private void OnCollisionEnter(Collision collision)
     {

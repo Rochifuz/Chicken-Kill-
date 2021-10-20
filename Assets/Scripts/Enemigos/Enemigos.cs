@@ -16,7 +16,7 @@ public class Enemigos : MonoBehaviour, IDamage
     NavMeshAgent agent;
 
     public GameObject PataMuslo;
-    
+    public float tiempo;
     
     // Start is called before the first frame update
     void Start()
@@ -44,9 +44,16 @@ public class Enemigos : MonoBehaviour, IDamage
     {
         Destroy(gameObject);
         Instantiate(PataMuslo, transform.position, transform.rotation);
-       
+
+        tiempo = tiempo + Time.time;
+        if (tiempo == 5)
+        {
+
+            Destroy(PataMuslo);
+            tiempo = 0;
+
+        }
     }
-    
 
     // este codigo es cuando la gallina colisiona con el jugador quite el daño dicho anteriormente
     private void OnCollisionEnter (Collision collision)
