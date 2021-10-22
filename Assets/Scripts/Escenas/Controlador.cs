@@ -8,6 +8,7 @@ public class Controlador : MonoBehaviour
     public void cargarEscena(string name)
     {
         SceneManager.LoadScene(name);
+        Time.timeScale = 1;
 
     }
     public void salir()
