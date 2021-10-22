@@ -29,7 +29,7 @@ public class ControlGenerador : MonoBehaviour
             {                oleadaActual++;
                 GeneradorEnemigos(oleadaActual);
 
-                if (oleadaActual == 10)
+                if (oleadaActual == numeroMaxOleadas)
 
                 {
                     Time.timeScale = 0;

@@ -6,9 +6,12 @@ using UnityEngine.AI;
 public class EnemigosQueDispara : MonoBehaviour, IDamage
 {
     public GameObject target;
+    public Transform weapon;
     float distanceToTarget;
     public int daño = 10;
-
+    public float distanciaDisparo = 10f;
+    public float intervaloDisparo = 2f;
+    float shootTime;
     public int life = 15;
 
     public bool shootByPlayer;
@@ -23,7 +26,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
-
+        shootTime = intervaloDisparo;
 
     }
     // este codigo es el daño de la bala a las gallinas
@@ -48,12 +51,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     }
 
 
-    // este codigo es cuando la gallina colisiona con el jugador quite el daño dicho anteriormente
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Gallina2 golpea = ");
-        collision.gameObject.GetComponent<VidaPlayer>().vida -= daño;
-    }
+  
     // Update is called once per frame
     void Update()
     {
@@ -68,7 +66,21 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         {
             Destroy(gameObject); //se destruye la gallina si se cae 
         }
+        ShootControl();
     }
 
-
+    void ShootControl()
+    {
+        shootTime -= Time.deltaTime;
+        if(shootTime < 0)
+        {
+            if(distanceToTarget < distanciaDisparo)
+            {
+                shootTime = intervaloDisparo;
+                GameObject bullet = ObjectPooling.instance.GetBullet(false);
+                bullet.transform.position = weapon.position;
+                bullet.transform.LookAt(target.transform.position);               
+            }
+        }
+    }
 }

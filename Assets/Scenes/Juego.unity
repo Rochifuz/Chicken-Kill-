@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 297941873}
   - component: {fileID: 297941875}
   - component: {fileID: 297941874}
+  - component: {fileID: 297941876}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -572,6 +573,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297941872}
   m_CullTransparentMesh: 0
+--- !u!114 &297941876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297941872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d64437364c78479fab887b658f660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cartelganar: {fileID: 0}
+  CartelPerder: {fileID: 0}
+  botonJugar: {fileID: 0}
+  botonPerder: {fileID: 0}
 --- !u!1 &349336919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1463,7 @@ GameObject:
   - component: {fileID: 861018435}
   - component: {fileID: 861018434}
   - component: {fileID: 861018433}
+  - component: {fileID: 861018436}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -1569,6 +1587,22 @@ RectTransform:
   m_AnchoredPosition: {x: -11.4, y: -9.1}
   m_SizeDelta: {x: 274.09695, y: 260.3031}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &861018436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861018432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d64437364c78479fab887b658f660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cartelganar: {fileID: 0}
+  CartelPerder: {fileID: 0}
+  botonJugar: {fileID: 0}
+  botonPerder: {fileID: 0}
 --- !u!1 &895940858
 GameObject:
   m_ObjectHideFlags: 0
