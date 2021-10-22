@@ -6,13 +6,7 @@ using UnityEngine.AI;
 public class EnemigosQueDispara : MonoBehaviour, IDamage
 {
     public GameObject target;
-    public Transform weapon;
     float distanceToTarget;
-    public float distanciaDisparo = 10f;
-    public float intervaloDisparo = 2f;
-    float tiempoDisparo;
-
-
     public int daño = 10;
 
     public int life = 15;
@@ -29,7 +23,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
-        tiempoDisparo = intervaloDisparo;
+
 
     }
     // este codigo es el daño de la bala a las gallinas
@@ -52,17 +46,22 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         Instantiate(PataMuslo, transform.position, transform.rotation);
 
     }
+
+
+    // este codigo es cuando la gallina colisiona con el jugador quite el daño dicho anteriormente
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Gallina2 golpea = ");
+        collision.gameObject.GetComponent<VidaPlayer>().vida -= daño;
+    }
     // Update is called once per frame
     void Update()
     {
         //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
         Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
         transform.LookAt(posNoRot); //para que la gallina nos mire
-
         distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
         //distance calcula la distancia entre la gallina y nosotros
-        ShootControl();
-
         agent.SetDestination(target.transform.position); //para que la gallina nos persiga
 
         if (transform.position.y < -10)
@@ -71,19 +70,5 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         }
     }
 
-    void ShootControl()
-    {
-        tiempoDisparo -= Time.deltaTime;
-        if(tiempoDisparo < 0)
-        {
-            if( distanceToTarget < distanciaDisparo)
-            {
-                tiempoDisparo = intervaloDisparo;
-                GameObject bullet = ObjectPooling.instance.GetBullet(false);
-                bullet.transform.position = weapon.position;
-                bullet.transform.LookAt(target.transform.position);
-            }
-        }
-    }
 
 }
