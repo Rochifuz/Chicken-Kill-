@@ -39,15 +39,19 @@ public class Ganar : MonoBehaviour
     {
         Ganar.ganarStatic.gameObject.SetActive(true);
         Ganar.botonJugarstatic.gameObject.SetActive(true);
+        Ganar.botonPerderstatic.gameObject.SetActive(true);
     }
 
     public static void show1()
     {
         Ganar.perderStatic.gameObject.SetActive(true);
         Ganar.botonPerderstatic.gameObject.SetActive(true);
+        Ganar.botonJugarstatic.gameObject.SetActive(true);
     }
+    
     public static void show2()
     {
+        Ganar.botonJugarstatic.gameObject.SetActive(true);
         Ganar.botonPerderstatic.gameObject.SetActive(true);
     }
     

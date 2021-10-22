@@ -14,8 +14,9 @@ public class Pausa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetButtonDown("Pause"))
         {
+            
             PausarJuego();
            
         }
@@ -27,11 +28,14 @@ public class Pausa : MonoBehaviour
         {
             Time.timeScale = 0;
             Ganar.show2();
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1;
             Ganar.botonPerderstatic.gameObject.SetActive(false);
+            Ganar.botonJugarstatic.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
         
     }

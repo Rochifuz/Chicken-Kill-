@@ -34,7 +34,7 @@ public class ControlGenerador : MonoBehaviour
                 {
                     Time.timeScale = 0;
                     Ganar.show();
-                    Ganar.show2();
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
             
