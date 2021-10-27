@@ -36,11 +36,10 @@ public class ObjectPooling : MonoBehaviour
         int totalBullets = bullets.Count;
         for(int i=0; i<totalBullets; i++)
         {
-            if(!bullets[i].prefab.activeInHierarchy)
+            if(!bullets[i].prefab.activeInHierarchy)//Define si la bala la dispara un jugador o enemigo
             {
                 bullets[i].prefab.SetActive(true);
                 bullets[i].scriptBullet.shootByPlayer = isPlayer;
-                //esto nos devuelve a true una bala que paso a estar en falso y nos dice quien disparo
                 return bullets[i].prefab;
             }
         }
