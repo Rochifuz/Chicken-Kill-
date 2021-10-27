@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Camara
-    public Transform cam;
-    float vMouse;
-    float hMouse;
-    float yReal = 0.0f;
-    public float horizontalSpeed;
-    public float verticalSpeed;
+    public Transform cam;//Posicion de camara
+    float vMouse;//Variable del eje vertical
+    float hMouse;//Variable del eje horizontal
+    float yReal = 0.0f;//Variable del eje y
+    public float horizontalSpeed;//Variable del la velocidad del eje h
+    public float verticalSpeed;//Variable del la velocidad del eje v
     //Movimiento
-    public CharacterController controller;
+    public CharacterController controller;//Control del personaje mediante la funcion Move
     public float speed = 10f;
-    float x;
-    float z;
-    Vector3 move; 
+    float x;//Variable del movimiento horizontal
+    float z;//Variable del movimiento vertical
+    Vector3 move; //Variable que te trasforma constantemente la direccion
     //Gravedad
     Vector3 velocity;
     public float gravity = -15f;
@@ -72,8 +72,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()//funcion de movimiento
     {
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");//Es a y d
+        z = Input.GetAxis("Vertical");//Es w y s
 
         move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime); 
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //Cuando el personaje colisiona con algo
+    //Cuando el personaje colisiona con el piso y el Grounded vuelva a true
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
