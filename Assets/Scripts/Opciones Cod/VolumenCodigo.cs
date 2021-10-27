@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class VolumenCodigo : MonoBehaviour
 {
+    // Este script esta en cotrolador opciones .
     public Slider slider;
     public float sliderValue;
     public Image imagenMute;
@@ -11,22 +12,22 @@ public class VolumenCodigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sliderValue = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
+        sliderValue = PlayerPrefs.GetFloat("volumenAudio", 0.5f); // el volumen inicia en la mitad
         
-        RevisarSiEstoyMute();
+        RevisarSiEstoyMute(); 
 
     }
 
 
-    public void ChangeSlider(float valor)
+    public void ChangeSlider(float valor)   // Esta funcion te permite mover el slider del volumen
     {
-        sliderValue = valor;
-        PlayerPrefs.SetFloat("volumenAudio", sliderValue);
-        RevisarSiEstoyMute();
+        sliderValue = valor;  //valor en que se encuentra la barra del volumen
+        PlayerPrefs.SetFloat("volumenAudio", sliderValue); // esto acomoda la barra al valor que se le de
+        RevisarSiEstoyMute(); // te informa con un icono si estoy en mute
     }
-    public void RevisarSiEstoyMute()
+    public void RevisarSiEstoyMute() // te muestra un icono si estas muteado
     {
-        if (sliderValue == 0)
+        if (sliderValue == 0) 
         {
             imagenMute.enabled = true;
         }
@@ -35,12 +36,10 @@ public class VolumenCodigo : MonoBehaviour
             imagenMute.enabled = false;
         }
     }
-    void OnGUI()
+    void OnGUI() 
     {
-        //Create a horizontal Slider that controls volume levels. Its highest value is 1 and lowest is 0
-        //sliderValue = GUI.HorizontalSlider(new Rect(25, 25, 200, 60), sliderValue, 0.0F, 1.0F);
-        //Makes the volume of the Audio match the Slider value
-        AudioListener.volume = sliderValue;
+        
+        AudioListener.volume = sliderValue;  // como no se nos actualizaba el volumen cuando moviamos la barra y esto funciono lo dejamos asi
     }
 }
     
