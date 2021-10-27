@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+//este script se encuentra en el prefab chicken que es la segunda gallina
 public class EnemigosQueDispara : MonoBehaviour, IDamage
 {
     public GameObject target;
@@ -43,7 +43,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         }
     }
     //funcion de muerte de la gallina
-    void Die()
+    void Die()//aca se destruye la gallina y se instancia la pata en su lugar
     {
         Destroy(gameObject);
         Instantiate(PataMuslo, transform.position, transform.rotation);
@@ -69,7 +69,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         ShootControl();
     }
 
-    void ShootControl()
+    void ShootControl()//aqui se controla el disparo 
     {
         shootTime -= Time.deltaTime;
         if(shootTime < 0)

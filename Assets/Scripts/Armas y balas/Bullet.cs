@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//este script se encuentra en el gameobject de la bala o bullet
 public class Bullet : MonoBehaviour
 { 
 
@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
         {
             Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();      
             Vector3 impacto = (other.transform.position - transform.position);
-            rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);
+            rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);//esto hace que empuje un poco a las gallinas cuando las impacta las balas
         }
         // esto dice a quien golpea la bala
         Debug.Log("Bullet golpea = " + other.name);
