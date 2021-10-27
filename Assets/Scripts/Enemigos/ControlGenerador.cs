@@ -53,7 +53,7 @@ public class ControlGenerador : MonoBehaviour
     {
 
 
-        for (int i = 0; i < cantidadEnemigos; i++)
+        for (int i = 0; i < cantidadEnemigos; i++)// esta funcion instancia los enemigos con un ciclo for y en el lugar que se le da
         {
             Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
         }
@@ -61,7 +61,7 @@ public class ControlGenerador : MonoBehaviour
 
     }
 
-    int incrementoEnemigos(int oleadas)
+    int incrementoEnemigos(int oleadas)//esta funcion multiplica la cantidad de enemigos segun la oleada en la que se encuentra
     {
         if (oleadas > 15)
         {
@@ -71,7 +71,7 @@ public class ControlGenerador : MonoBehaviour
         else return oleadas * 2;
     }
 
-    Vector3 DamePosicionGeneracion()
+    Vector3 DamePosicionGeneracion()//Esta funcion da la posicion en donde se instancian los enemigos
     {
         float posXGeneracion = Random.Range(-99, -69);
         float posZGeneracion = Random.Range(-19, -50);
