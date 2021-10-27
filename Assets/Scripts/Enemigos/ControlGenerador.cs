@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//este script se encuentra en generadorObjetos
 public class ControlGenerador : MonoBehaviour
 {
     public GameObject prefabEnemigos;
@@ -11,11 +11,11 @@ public class ControlGenerador : MonoBehaviour
     public int numeroMaxOleadas = 10; // la cant maxima de oleadas del nivel
     public int oleadaInicial = 1; //oleada en la que comienza a instanciar enemigos
     private int oleadaActual = 1; //en que oleada me encuentro
-
+    int cantidadEnemigos = 1;//este es el entero de los enemigos instanciados
     // Start is called before the first frame update
     void Start()
     {
-        GeneradorEnemigos(oleadaActual);
+        GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);//Esto cuenta cuantos enemigos hay instanciados y que prefab se utiliza
     }
 
     // Update is called once per frame
@@ -25,62 +25,59 @@ public class ControlGenerador : MonoBehaviour
 
         if (numeroEnemigos == 0)
         {
-            if (oleadaActual < numeroMaxOleadas)
-            {                oleadaActual++;
-                GeneradorEnemigos(oleadaActual);
-
-                if (oleadaActual == numeroMaxOleadas)
+            if (oleadaActual < numeroMaxOleadas)//mientras la oleada sea menor al maximo de oleadas se siguen invocando enemigos
+            {
+                oleadaActual++;
+                cantidadEnemigos = incrementoEnemigos(oleadaActual - oleadaInicial + 1);
+                if (oleadaActual >= 2)//si se alcanza la oleada dos se divide la invocacion de cada prefab en 2 para que la cantidad sea la correcta
+                {
+                    cantidadEnemigos = cantidadEnemigos / 2;
+                }
+                GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);
+                if (oleadaActual >= 2)//Aqui si se llega a la oleada 2 se comienzan a instanciar los otros enemigos
+                {
+                    GeneradorEnemigos(cantidadEnemigos, prefabEnemigos2);
+                }
+                if (oleadaActual == numeroMaxOleadas)//Esta funcion dice que si se alcanza el numero max de oleadas se gana el juego
 
                 {
-                    Time.timeScale = 0;
                     Ganar.show();
-                    Cursor.lockState = CursorLockMode.None;
                 }
             }
-            
+
         }
-        
+
     }
 
-    void GeneradorEnemigos (int oleadas)
+    void GeneradorEnemigos(int cantidadEnemigos, GameObject instanciaEnemigo)
     {
-        if (oleadas >= oleadaInicial)
+
+
+        for (int i = 0; i < cantidadEnemigos; i++)
         {
-
-
-            for (int i = 0; i < incrementoEnemigos(oleadas - oleadaInicial+1); i++)
-            {
-                Instantiate(prefabEnemigos, DamePosicionGeneracion(), prefabEnemigos.transform.rotation);
-            }
-           
+            Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
         }
 
-        if (oleadas >= 2)
-        {
-            for (int i = 0; i < incrementoEnemigos(oleadas - oleadaInicial + 1); i++)
-            {
-                Instantiate(prefabEnemigos2, DamePosicionGeneracion(), prefabEnemigos2.transform.rotation);
-            }
-        }
+
     }
 
-    int incrementoEnemigos (int oleadas)
+    int incrementoEnemigos(int oleadas)
     {
         if (oleadas > 15)
         {
-            return oleadas^2;
+            return oleadas ^ 2;
 
         }
         else return oleadas * 2;
     }
 
-    Vector3 DamePosicionGeneracion ()
+    Vector3 DamePosicionGeneracion()
     {
         float posXGeneracion = Random.Range(-99, -69);
         float posZGeneracion = Random.Range(-19, -50);
 
         Vector3 posAleatoria = new Vector3(posXGeneracion, 2, posZGeneracion);
-    
+
         return posAleatoria;
     }
 }
