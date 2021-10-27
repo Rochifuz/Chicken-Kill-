@@ -12014,7 +12014,7 @@ GameObject:
   - component: {fileID: 576428344}
   - component: {fileID: 576428343}
   m_Layer: 5
-  m_Name: Volver a jugar
+  m_Name: Volver a Jugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18553,7 +18553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Volver a jugar
+  m_Text: 'Reiniciar partida
 
 '
 --- !u!222 &895940861
