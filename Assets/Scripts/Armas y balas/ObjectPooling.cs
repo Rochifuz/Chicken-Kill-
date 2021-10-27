@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//este script se encuentra en el GameObject de PoolingManager
 public class ObjectPooling : MonoBehaviour
 {
-    struct BulletInfo
+    struct BulletInfo// aca se define el prefab de las balas que se utiliza y que script es el que usa la bala
     {
         public GameObject prefab;
         public Bullet scriptBullet;
@@ -31,7 +31,7 @@ public class ObjectPooling : MonoBehaviour
         }
     }
 
-    public GameObject GetBullet(bool isPlayer)
+    public GameObject GetBullet(bool isPlayer)//esto define si el disparo lo realizo un jugador o un enemigo
     {
         int totalBullets = bullets.Count;
         for(int i=0; i<totalBullets; i++)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+//script que se encuentra en el prefab toonchicken
 public class Enemigos : MonoBehaviour, IDamage
 {
     public GameObject target;
@@ -39,7 +39,7 @@ public class Enemigos : MonoBehaviour, IDamage
             }
         }
     }
-    //funcion de muerte de la gallina
+    //funcion de muerte de la gallina y se instancia la pata
     void Die()
     {
         Destroy(gameObject);

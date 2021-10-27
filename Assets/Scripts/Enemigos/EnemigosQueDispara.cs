@@ -12,7 +12,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     public float distanciaDisparo = 10f;
     public float intervaloDisparo = 2f;
     float shootTime;
-    public int life = 15;
+    public int life = 15;//vida de la gallina
 
     public bool shootByPlayer;
 
@@ -69,17 +69,17 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         ShootControl();
     }
 
-    void ShootControl()//aqui se controla el disparo 
+    void ShootControl()//aqui se controla el disparo junto al intervalo de disparo y la distancia que hay con el player
     {
         shootTime -= Time.deltaTime;
         if(shootTime < 0)
         {
             if(distanceToTarget < distanciaDisparo)
             {
-                shootTime = intervaloDisparo;
-                GameObject bullet = ObjectPooling.instance.GetBullet(false);
-                bullet.transform.position = weapon.position;
-                bullet.transform.LookAt(target.transform.position);               
+                shootTime = intervaloDisparo; //tiempo entre bala y bala
+                GameObject bullet = ObjectPooling.instance.GetBullet(false);//aqui se instancia la bala y dice que es del enemigo al decir false
+                bullet.transform.position = weapon.position;//se instancia en el arma que es un gameobject invisible
+                bullet.transform.LookAt(target.transform.position); //dispara a la posicion del player              
             }
         }
     }

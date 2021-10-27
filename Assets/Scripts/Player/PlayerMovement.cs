@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//script que se encuentra en el player
 public class PlayerMovement : MonoBehaviour
 {
     //Camara
@@ -32,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        jumpValue = Mathf.Sqrt(jumpForce * -2 * gravity);
+        Cursor.lockState = CursorLockMode.Locked;//bloquea el cursor para cuando se mueva la camara del player
+        jumpValue = Mathf.Sqrt(jumpForce * -2 * gravity);//fuerza del salto
     }
 
     // Update is called once per frame
     void Update()
     {
-        LookMouse();
+        LookMouse();//actualiza la camara adonde se vea el mouse
 
         if(isGrounded ==true && velocity.y < 0)
         {
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         //Controlador de rotacion
     }
 
-    void Movement()
+    void Movement()//funcion de movimiento
     {
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime); 
     }
 
-    void Jump()
+    void Jump()//funcion de salto
     {
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
