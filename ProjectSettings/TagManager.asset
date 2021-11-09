@@ -7,6 +7,10 @@ TagManager:
   - floor
   - Enemigo
   - PARED
+  - PARED 2
+  - PARED 3
+  - PARED 4
+  - BOSS
   layers:
   - Default
   - TransparentFX
