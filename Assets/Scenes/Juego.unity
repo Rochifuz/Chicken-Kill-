@@ -27279,7 +27279,7 @@ GameObject:
   - component: {fileID: 1299584704}
   m_Layer: 0
   m_Name: Pared
-  m_TagString: Untagged
+  m_TagString: PARED
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27296,7 +27296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3867330efa6f7a24eb245d831db985f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ronda: 0
 --- !u!65 &1299584705
 BoxCollider:
   m_ObjectHideFlags: 0

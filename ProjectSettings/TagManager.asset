@@ -6,6 +6,7 @@ TagManager:
   tags:
   - floor
   - Enemigo
+  - PARED
   layers:
   - Default
   - TransparentFX

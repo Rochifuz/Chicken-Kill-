@@ -44,6 +44,10 @@ public class ControlGenerador : MonoBehaviour
                     Ganar.show();
                 }
             }
+            if (oleadaActual == 2)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("PARED"));
+            }
 
         }
 
@@ -56,6 +60,10 @@ public class ControlGenerador : MonoBehaviour
         for (int i = 0; i < cantidadEnemigos; i++)// esta funcion instancia los enemigos con un ciclo for y en el lugar que se le da
         {
             Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
+            if(oleadaActual > 2)
+            {
+                Instantiate(instanciaEnemigo, DamePosicionGeneracion2(), instanciaEnemigo.transform.rotation);
+            }
         }
 
 
@@ -73,11 +81,22 @@ public class ControlGenerador : MonoBehaviour
 
     Vector3 DamePosicionGeneracion()//Esta funcion da la posicion en donde se instancian los enemigos
     {
-        float posXGeneracion = Random.Range(-99, -69);
-        float posZGeneracion = Random.Range(-19, -50);
+      
+            float posXGeneracion = Random.Range(-99, -69);
+            float posZGeneracion = Random.Range(-19, -50);
+            Vector3 posAleatoria = new Vector3(posXGeneracion, 2, posZGeneracion);
+            return posAleatoria;
+       
 
-        Vector3 posAleatoria = new Vector3(posXGeneracion, 2, posZGeneracion);
+    }
+    Vector3 DamePosicionGeneracion2()//Esta funcion da la posicion en donde se instancian los enemigos
+    {
 
-        return posAleatoria;
+        float posXGeneracion2 = Random.Range(-61, -32);
+        float posZGeneracion2 = Random.Range(-17, -52);
+        Vector3 posAleatoria2 = new Vector3(posXGeneracion2, 2, posZGeneracion2);
+        return posAleatoria2;
+
+
     }
 }
