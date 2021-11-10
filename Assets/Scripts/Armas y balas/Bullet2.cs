@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//este script se encuentra en el gameobject de la bala o bullet
+//este script se encuentra en el gameobject de los huevos o bullet2
 public class Bullet2 : MonoBehaviour
 { 
 
    public float speed = 8f;
    public float lifeDuration = 2f;
    float lifeTimer;
-   public int attack = 5;
+   public int attack2 = 5;
 
-   public bool shootByPlayer;//un bool para saber si es el jugador quien disparo la bala o la gallina
+   public bool shootByPlayer2;//un bool para saber si es el jugador quien disparo la bala o la gallina
     //duracion de la bala
    private void OnEnable()
    {
@@ -37,20 +37,13 @@ public class Bullet2 : MonoBehaviour
     private void OnTriggerEnter (Collider other)
 
     {
-
-        if ( other.gameObject.CompareTag("Enemigo"))   // si collisiona con el tag enemigo.
-        {
-            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();      
-            Vector3 impacto = (other.transform.position - transform.position);
-            rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);//esto hace que empuje un poco a las gallinas cuando las impacta las balas
-        }
         // esto dice a quien golpea la bala
         Debug.Log("Bullet golpea = " + other.name);
 
-        IDamage2 damage = other.GetComponent<IDamage2>();
-        if(damage != null)
+        IDamage2 damage1 = other.GetComponent<IDamage2>();
+        if(damage1 != null)
         {//aca se define quien golpea y cuanto daño realiza por medio de la interfaz
-            damage.DoDamage2(attack, shootByPlayer);
+            damage1.DoDamage2(attack2, shootByPlayer2);
         }
         gameObject.SetActive(false);
     }

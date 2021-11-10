@@ -39,7 +39,7 @@ public class ObjectPooling2 : MonoBehaviour
             if(!bullets[i].prefab.activeInHierarchy)//Define si la bala la dispara un jugador o enemigo y si una bala se encuentra en false la pasa a true
             {
                 bullets[i].prefab.SetActive(true);
-                bullets[i].scriptBullet2.shootByPlayer = isPlayer2;
+                bullets[i].scriptBullet2.shootByPlayer2 = isPlayer2;
                 return bullets[i].prefab;
             }
         }
@@ -49,7 +49,7 @@ public class ObjectPooling2 : MonoBehaviour
         BPrefab.prefab.transform.SetParent(transform);
         BPrefab.prefab.SetActive(true);
         BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet2>();
-        BPrefab.scriptBullet2.shootByPlayer = isPlayer2;
+        BPrefab.scriptBullet2.shootByPlayer2 = isPlayer2;
         bullets.Add(BPrefab);
 
         return BPrefab.prefab;

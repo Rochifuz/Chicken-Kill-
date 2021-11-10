@@ -115,7 +115,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   shotRateGlock: 1.5
   shotRateUzi: 0.8
   shotRateAk: 0.3

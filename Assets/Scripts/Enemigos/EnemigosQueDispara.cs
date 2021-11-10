@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 //este script se encuentra en el prefab chicken que es la segunda gallina
-public class EnemigosQueDispara : MonoBehaviour, IDamage2
+public class EnemigosQueDispara : MonoBehaviour, IDamage
 {
     public GameObject target;
     public Transform weapon;
@@ -30,12 +30,12 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage2
 
     }
     // este codigo es el daño de la bala a las gallinas
-    public void DoDamage2(int vld2, bool isPlayer2)
+    public void DoDamage(int vld, bool isPlayer)
     {//aqui se muestra cuanto daño le hemos hecho a la gallina y la funcion para restarle vida y que se destruya
-        Debug.Log("Daño hecho = " + vld2 + " isPlayer = " + isPlayer2);
-        if (isPlayer2 == true)
+        Debug.Log("Daño hecho = " + vld + " isPlayer = " + isPlayer);
+        if (isPlayer == true)
         {
-            life -= vld2;
+            life -= vld;
             if (life < 0)
             {
                 Die();
