@@ -31,16 +31,16 @@ public class ControlGenerador : MonoBehaviour
             {
                 oleadaActual++;
                 cantidadEnemigos = incrementoEnemigos(oleadaActual - oleadaInicial + 1);
-                if (oleadaActual >= 2)//si se alcanza la oleada dos se divide la invocacion de cada prefab en 2 para que la cantidad sea la correcta
+                if (oleadaActual >= 1)//si se alcanza la oleada dos se divide la invocacion de cada prefab en 2 para que la cantidad sea la correcta
                 {
                     cantidadEnemigos = cantidadEnemigos / 2;
                 }
                 GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);
-                if (oleadaActual >= 2)//Aqui si se llega a la oleada 2 se comienzan a instanciar los otros enemigos
+                if (oleadaActual >= 1)//Aqui si se llega a la oleada 2 se comienzan a instanciar los otros enemigos
                 {
                     GeneradorEnemigos(cantidadEnemigos, prefabEnemigos2);
                 }
-                if(oleadaActual >= 3)//Aqui aparece el Boss
+                if(oleadaActual >= 2)//Aqui aparece el Boss
                 {
                     GeneradorEnemigos2(1,prefabEnemigos3);
                 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 //este script se encuentra en el prefab chicken que es la segunda gallina
-public class EnemigosQueDispara : MonoBehaviour, IDamage
+public class EnemigosQueDispara : MonoBehaviour, IDamage2
 {
     public GameObject target;
     public Transform weapon;
@@ -30,12 +30,12 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
 
     }
     // este codigo es el daño de la bala a las gallinas
-    public void DoDamage(int vld, bool isPlayer)
+    public void DoDamage2(int vld2, bool isPlayer2)
     {//aqui se muestra cuanto daño le hemos hecho a la gallina y la funcion para restarle vida y que se destruya
-        Debug.Log("Daño hecho = " + vld + " isPlayer = " + isPlayer);
-        if (isPlayer == true)
+        Debug.Log("Daño hecho = " + vld2 + " isPlayer = " + isPlayer2);
+        if (isPlayer2 == true)
         {
-            life -= vld;
+            life -= vld2;
             if (life < 0)
             {
                 Die();
@@ -77,9 +77,9 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
             if(distanceToTarget < distanciaDisparo)
             {
                 shootTime = intervaloDisparo; //tiempo entre bala y bala
-                GameObject bullet = ObjectPooling.instance.GetBullet(false);//aqui se instancia la bala y dice que es del enemigo al decir false
-                bullet.transform.position = weapon.position;//se instancia en el arma que es un gameobject invisible
-                bullet.transform.LookAt(target.transform.position); //dispara a la posicion del player              
+                GameObject bullet2 = ObjectPooling2.instance.GetBullet2(false);//aqui se instancia la bala y dice que es del enemigo al decir false
+                bullet2.transform.position = weapon.position;//se instancia en el arma que es un gameobject invisible
+                bullet2.transform.LookAt(target.transform.position); //dispara a la posicion del player              
             }
         }
     }
