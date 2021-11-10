@@ -47,10 +47,10 @@ public class Bullet2 : MonoBehaviour
         // esto dice a quien golpea la bala
         Debug.Log("Bullet golpea = " + other.name);
 
-        IDamage2 damage = other.GetComponent<IDamage2>();
+        IDamage damage = other.GetComponent<IDamage>();
         if(damage != null)
         {//aca se define quien golpea y cuanto daño realiza por medio de la interfaz
-            damage.DoDamage2(attack, shootByPlayer);
+            damage.DoDamage(attack, shootByPlayer);
         }
         gameObject.SetActive(false);
     }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1902159074683926321}
   - component: {fileID: 5671125195193692198}
   - component: {fileID: 849890013775412520}
+  - component: {fileID: 8652944560874669696}
   m_Layer: 0
   m_Name: Huevo gallina
   m_TagString: Untagged
@@ -112,3 +113,16 @@ MonoBehaviour:
   lifeDuration: 2
   attack: 5
   shootByPlayer: 0
+--- !u!65 &8652944560874669696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381226724554074558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 //Este script se encientra en player
-public class PlayerActions : MonoBehaviour, IDamage2
+public class PlayerActions : MonoBehaviour, IDamage
 {
 
     public Transform posGun;//Posicion del arma
@@ -117,12 +117,12 @@ public class PlayerActions : MonoBehaviour, IDamage2
         }   
         }
     }
-    public void DoDamage2(int vld2, bool isPlayer2)
+    public void DoDamage(int vld, bool isPlayer)
     {//daño que se recibe y por parte de quien
-        Debug.Log("Recibi Daño = " + vld2 + "isPlayer = " +isPlayer2);
-        if (isPlayer2 == false)//La bala que le pega no es un player, le quita daño en la vida
+        Debug.Log("Recibi Daño = " + vld + "isPlayer = " +isPlayer);
+        if (isPlayer == false)//La bala que le pega no es un player, le quita daño en la vida
         {
-            gameObject.GetComponent<VidaPlayer>().vida -= vld2;            
+            gameObject.GetComponent<VidaPlayer>().vida -= vld;            
         }
 
     }
