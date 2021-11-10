@@ -46,7 +46,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
 
             //GameObject bulletObj = Instantiate(bulletPrefab);
-            GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
+            GameObject bulletObj = ObjectPooling.instance.GetBullet();//instancia la bala al hacer click y dice que es del jugador
 
             bulletObj.transform.position = posGun.position;// la bala sale desde el arma
             if(Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
@@ -73,7 +73,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
 
             //GameObject bulletObj = Instantiate(bulletPrefab);
-            GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
+            GameObject bulletObj = ObjectPooling.instance.GetBullet();//instancia la bala al hacer click y dice que es del jugador
 
             bulletObj.transform.position = posGun.position;// la bala sale desde el arma
             if(Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
@@ -100,7 +100,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
 
             //GameObject bulletObj = Instantiate(bulletPrefab);
-            GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
+            GameObject bulletObj = ObjectPooling.instance.GetBullet();//instancia la bala al hacer click y dice que es del jugador
 
             bulletObj.transform.position = posGun.position;// la bala sale desde el arma
             if(Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
@@ -117,13 +117,13 @@ public class PlayerActions : MonoBehaviour, IDamage2
         }   
         }
     }
-    public void DoDamage2(int vld2, bool isPlayer2)
+    public void DoDamage2(int vld2)
     {//daño que se recibe y por parte de quien
-        Debug.Log("Recibi Daño = " + vld2 + "isPlayer = " +isPlayer2);
-        if (isPlayer2 == false)//La bala que le pega no es un player, le quita daño en la vida
-        {
-            gameObject.GetComponent<VidaPlayer>().vida -= vld2;            
-        }
+        Debug.Log("Recibi Daño = " + vld2);
+        //La bala que le pega no es un player, le quita daño en la vida
+        
+        gameObject.GetComponent<VidaPlayer>().vida -= vld2;            
+        
 
     }
 

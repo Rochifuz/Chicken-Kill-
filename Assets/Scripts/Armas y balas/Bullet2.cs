@@ -50,7 +50,7 @@ public class Bullet2 : MonoBehaviour
         IDamage2 damage = other.GetComponent<IDamage2>();
         if(damage != null)
         {//aca se define quien golpea y cuanto daño realiza por medio de la interfaz
-            damage.DoDamage2(attack, shootByPlayer);
+            damage.DoDamage2(attack);
         }
         gameObject.SetActive(false);
     }

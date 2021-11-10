@@ -30,17 +30,15 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage2
 
     }
     // este codigo es el daño de la bala a las gallinas
-    public void DoDamage2(int vld2, bool isPlayer2)
+    public void DoDamage2(int vld2)
     {//aqui se muestra cuanto daño le hemos hecho a la gallina y la funcion para restarle vida y que se destruya
-        Debug.Log("Daño hecho = " + vld2 + " isPlayer = " + isPlayer2);
-        if (isPlayer2 == true)
-        {
+        Debug.Log("Daño hecho = " + vld2);
             life -= vld2;
             if (life < 0)
             {
                 Die();
             }
-        }
+        
     }
     //funcion de muerte de la gallina
     void Die()//aca se destruye la gallina y se instancia la pata en su lugar
