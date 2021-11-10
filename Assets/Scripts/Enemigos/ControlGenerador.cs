@@ -52,6 +52,7 @@ public class ControlGenerador : MonoBehaviour
             }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (oleadaActual == 2)//Funcion que te destruye las paredes
             {
                 Destroy(GameObject.FindGameObjectWithTag("PARED"));
@@ -75,6 +76,8 @@ public class ControlGenerador : MonoBehaviour
             }
 =======
 >>>>>>> parent of 67c641c (Posicion oleadas y pared)
+=======
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 
         }
 
@@ -89,11 +92,14 @@ public class ControlGenerador : MonoBehaviour
             Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(oleadaActual > 1)
             {
                 Instantiate(instanciaEnemigo, DamePosicionGeneracion2(), instanciaEnemigo.transform.rotation);
             }
 =======
+=======
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 =======
 >>>>>>> parent of 67c641c (Posicion oleadas y pared)
         }
@@ -126,6 +132,7 @@ public class ControlGenerador : MonoBehaviour
 
     Vector3 DamePosicionGeneracion()//Esta funcion da la posicion en donde se instancian los enemigos
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       
@@ -171,6 +178,10 @@ public class ControlGenerador : MonoBehaviour
     
         Vector3 posAleatoria4 = new Vector3(-64, 2, 17);
         return posAleatoria4;
+=======
+        float posXGeneracion = Random.Range(-99, -69);
+        float posZGeneracion = Random.Range(-19, -50);
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 =======
         float posXGeneracion = Random.Range(-99, -69);
         float posZGeneracion = Random.Range(-19, -50);
