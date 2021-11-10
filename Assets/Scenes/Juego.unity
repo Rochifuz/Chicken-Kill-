@@ -27383,7 +27383,7 @@ GameObject:
   - component: {fileID: 1299584704}
   m_Layer: 0
   m_Name: Pared
-  m_TagString: PARED
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27406,9 +27406,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 0b35101 (Varios)
 =======
 >>>>>>> parent of 0b35101 (Varios)
+=======
+  ronda: 0
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 --- !u!65 &1299584705
 BoxCollider:
   m_ObjectHideFlags: 0

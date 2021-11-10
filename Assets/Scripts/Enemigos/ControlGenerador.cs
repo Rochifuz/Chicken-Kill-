@@ -50,10 +50,13 @@ public class ControlGenerador : MonoBehaviour
                     Ganar.show();
                 }
             }
+<<<<<<< HEAD
             if (oleadaActual == 2)//Funcion que te destruye las paredes
             {
                 Destroy(GameObject.FindGameObjectWithTag("PARED"));
             }
+=======
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 
             if (oleadaActual == 5)//Funcion que te destruye las paredes
             {
@@ -81,10 +84,14 @@ public class ControlGenerador : MonoBehaviour
         for (int i = 0; i < cantidadEnemigos; i++)// esta funcion instancia los enemigos con un ciclo for y en el lugar que se le da
         {
             Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
+<<<<<<< HEAD
             if(oleadaActual > 1)
             {
                 Instantiate(instanciaEnemigo, DamePosicionGeneracion2(), instanciaEnemigo.transform.rotation);
             }
+=======
+        }
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 
             if(oleadaActual > 2)
             {
@@ -113,6 +120,7 @@ public class ControlGenerador : MonoBehaviour
 
     Vector3 DamePosicionGeneracion()//Esta funcion da la posicion en donde se instancian los enemigos
     {
+<<<<<<< HEAD
       
             float posXGeneracion = Random.Range(-99, -69);
             float posZGeneracion = Random.Range(-19, -50);
@@ -129,8 +137,14 @@ public class ControlGenerador : MonoBehaviour
         float posZGeneracion2 = Random.Range(-17, -52);
         Vector3 posAleatoria2 = new Vector3(posXGeneracion2, 2, posZGeneracion2);
         return posAleatoria2;
+=======
+        float posXGeneracion = Random.Range(-99, -69);
+        float posZGeneracion = Random.Range(-19, -50);
+>>>>>>> parent of 67c641c (Posicion oleadas y pared)
 
+        Vector3 posAleatoria = new Vector3(posXGeneracion, 2, posZGeneracion);
 
+        return posAleatoria;
     }
 
     Vector3 DamePosicionGeneracion3()//Esta funcion da la posicion en donde se instancian los enemigos

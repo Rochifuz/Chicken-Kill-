@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Pared : MonoBehaviour
 {
-    
-
+    public int ronda;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,10 @@ public class Pared : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        ronda = GetComponent<ControlGenerador>().oleadaActual;
+        if (ronda == 3)
+        {
+            Destroy(gameObject);
+        }
     }
 }
