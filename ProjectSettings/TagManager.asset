@@ -6,6 +6,10 @@ TagManager:
   tags:
   - floor
   - Enemigo
+<<<<<<< HEAD
+=======
+  - PARED
+>>>>>>> parent of 0b35101 (Varios)
   layers:
   - Default
   - TransparentFX
