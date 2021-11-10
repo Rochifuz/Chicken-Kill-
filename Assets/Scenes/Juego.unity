@@ -16773,6 +16773,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9cc5585b9634a9449920c03ec6bc243, type: 3}
 --- !u!1001 &801948974
+<<<<<<< HEAD
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -16830,6 +16831,8 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d2fa0713f72e4540a45253647e16caf, type: 3}
 --- !u!1001 &802920650
+=======
+>>>>>>> parent of 0b35101 (Varios)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -26001,6 +26004,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d2fa0713f72e4540a45253647e16caf, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1219338200
 GameObject:
   m_ObjectHideFlags: 0
@@ -26096,6 +26100,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 0b35101 (Varios)
 =======
 >>>>>>> parent of 0b35101 (Varios)
 --- !u!1001 &1219427133
@@ -27383,7 +27389,10 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 0b35101 (Varios)
 --- !u!114 &1299584704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27396,6 +27405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3867330efa6f7a24eb245d831db985f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+>>>>>>> parent of 0b35101 (Varios)
+=======
 >>>>>>> parent of 0b35101 (Varios)
 --- !u!65 &1299584705
 BoxCollider:
@@ -32484,6 +32496,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9cc5585b9634a9449920c03ec6bc243, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1558483640
 GameObject:
   m_ObjectHideFlags: 0
@@ -32579,6 +32592,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 0b35101 (Varios)
 =======
 >>>>>>> parent of 0b35101 (Varios)
 --- !u!1001 &1561082063
