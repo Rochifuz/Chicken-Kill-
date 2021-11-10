@@ -14,7 +14,7 @@ public class ObjectPooling2 : MonoBehaviour
     public int bulletAmount = 5;
 
     private List<BulletInfos> bullets;
-    
+
     void Awake()
     {
         //Este codigo nos da una lista de 5 balas para que no se creen extras y se ocupe mucho espacio en el juego
@@ -27,7 +27,7 @@ public class ObjectPooling2 : MonoBehaviour
             BPrefab.prefab.transform.SetParent(transform);
             BPrefab.prefab.SetActive(false);
             BPrefab.scriptBullet = BPrefab.prefab.GetComponent<Bullet2>();
-            bullets.Add(BPrefab);        
+            bullets.Add(BPrefab);
         }
     }
 
@@ -55,4 +55,3 @@ public class ObjectPooling2 : MonoBehaviour
         return BPrefab.prefab;
     }
 }
-

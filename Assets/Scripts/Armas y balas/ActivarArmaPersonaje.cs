@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Este script se encuentra en el GameObject de las Armas
+//Este script se encuentra en el GameObject del Player
 public class ActivarArmaPersonaje : MonoBehaviour
 {
     public AgarrarArmas agarrarArma;

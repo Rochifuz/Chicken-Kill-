@@ -40,7 +40,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
             {
                 Die();
             }
-        }
+
     }
     //funcion de muerte de la gallina
     void Die()//aca se destruye la gallina y se instancia la pata en su lugar
@@ -51,7 +51,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     }
 
 
-  
+
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +64,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
 
         if (transform.position.y < -10)
         {
-            Destroy(gameObject); //se destruye la gallina si se cae 
+            Destroy(gameObject); //se destruye la gallina si se cae
         }
         ShootControl();
     }
@@ -79,7 +79,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
                 shootTime = intervaloDisparo; //tiempo entre bala y bala
                 GameObject bullet2 = ObjectPooling2.instance.GetBullet(false);//aqui se instancia la bala y dice que es del enemigo al decir false
                 bullet2.transform.position = weapon.position;//se instancia en el arma que es un gameobject invisible
-                bullet2.transform.LookAt(target.transform.position); //dispara a la posicion del player              
+                bullet2.transform.LookAt(target.transform.position); //dispara a la posicion del player
             }
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //este script se encuentra en el gameobject de la bala o bullet
 public class Bullet2 : MonoBehaviour
-{ 
+{
 
    public float speed = 8f;
    public float lifeDuration = 2f;
@@ -31,8 +31,8 @@ public class Bullet2 : MonoBehaviour
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
     }
 
-    
-    
+
+
     // cuando la bala impacte con el tag enemigo , se le agregue una fuerza de impacto.
     private void OnTriggerEnter (Collider other)
 
@@ -40,7 +40,7 @@ public class Bullet2 : MonoBehaviour
 
         if ( other.gameObject.CompareTag("Enemigo"))   // si collisiona con el tag enemigo.
         {
-            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();      
+            Rigidbody rbEnemigo = other.gameObject.GetComponent<Rigidbody>();
             Vector3 impacto = (other.transform.position - transform.position);
             rbEnemigo.AddForce(impacto * 2, ForceMode.Impulse);//esto hace que empuje un poco a las gallinas cuando las impacta las balas
         }
@@ -50,9 +50,8 @@ public class Bullet2 : MonoBehaviour
         IDamage damage = other.GetComponent<IDamage>();
         if(damage != null)
         {//aca se define quien golpea y cuanto daño realiza por medio de la interfaz
-            damage.DoDamage(attack, shootByPlayer);
+            damage.DoDamage2(attack);
         }
         gameObject.SetActive(false);
     }
 }
-

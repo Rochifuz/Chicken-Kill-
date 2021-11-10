@@ -31,15 +31,14 @@ public class ObjectPooling : MonoBehaviour
         }
     }
 
-    public GameObject GetBullet(bool isPlayer)//esto define si el disparo lo realizo un jugador o un enemigo
+    public GameObject GetBullet()//esto define si el disparo lo realizo un jugador o un enemigo
     {
         int totalBullets = bullets.Count;
         for(int i=0; i<totalBullets; i++)
         {
-            if(!bullets[i].prefab.activeInHierarchy)//Define si la bala la dispara un jugador o enemigo y si una bala se encuentra en false la pasa a true
+            if(!bullets[i].prefab.activeInHierarchy)//Define si la bala la dispara un jugador o enemigo
             {
                 bullets[i].prefab.SetActive(true);
-                bullets[i].scriptBullet.shootByPlayer = isPlayer;
                 return bullets[i].prefab;
             }
         }
@@ -49,7 +48,6 @@ public class ObjectPooling : MonoBehaviour
         BPrefab.prefab.transform.SetParent(transform);
         BPrefab.prefab.SetActive(true);
         BPrefab.scriptBullet = BPrefab.prefab.GetComponent<Bullet>();
-        BPrefab.scriptBullet.shootByPlayer = isPlayer;
         bullets.Add(BPrefab);
 
         return BPrefab.prefab;
