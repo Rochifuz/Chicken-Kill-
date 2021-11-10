@@ -363,6 +363,7 @@ MonoBehaviour:
   life: 15
   shootByPlayer: 0
   PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
+  moneda: {fileID: 3396851197031517163, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
 --- !u!195 &-5576779013458135314
 NavMeshAgent:
   m_ObjectHideFlags: 0

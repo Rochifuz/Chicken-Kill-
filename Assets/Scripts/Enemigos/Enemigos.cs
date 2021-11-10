@@ -16,6 +16,7 @@ public class Enemigos : MonoBehaviour, IDamage
     NavMeshAgent agent;
 
     public GameObject PataMuslo;
+    public GameObject moneda;
     
     
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class Enemigos : MonoBehaviour, IDamage
     {
         Destroy(gameObject);
         Instantiate(PataMuslo, transform.position, transform.rotation);
+        Instantiate(moneda, transform.position, transform.rotation);
        
     }
     
