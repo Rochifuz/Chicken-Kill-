@@ -316,7 +316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311290861401530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4677390999235134}
@@ -363,7 +363,7 @@ MonoBehaviour:
   life: 15
   shootByPlayer: 0
   PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
-  moneda: {fileID: 3396851197031517163, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
+  moneda: {fileID: 5025973255641258439, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
 --- !u!195 &-5576779013458135314
 NavMeshAgent:
   m_ObjectHideFlags: 0

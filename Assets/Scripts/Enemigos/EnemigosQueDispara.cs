@@ -16,6 +16,8 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
 
     public bool shootByPlayer;
 
+    public static int contador2 = 0;
+
     NavMeshAgent agent;
 
     public GameObject PataMuslo;
@@ -55,6 +57,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
+        
         //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
         Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
         transform.LookAt(posNoRot); //para que la gallina nos mire

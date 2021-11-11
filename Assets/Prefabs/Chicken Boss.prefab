@@ -224,7 +224,8 @@ MonoBehaviour:
   "da\xF1o": 10
   life: 15
   shootByPlayer: 0
-  PataMuslo: {fileID: 0}
+  PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
+  Moneda: {fileID: 7326430417920681106, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
 --- !u!1 &241122855946364638
 GameObject:
   m_ObjectHideFlags: 0

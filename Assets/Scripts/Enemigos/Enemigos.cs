@@ -11,12 +11,18 @@ public class Enemigos : MonoBehaviour, IDamage
 
     public int life = 15;
 
+    public static int contador = 0;
+
     public bool shootByPlayer;
 
     NavMeshAgent agent;
 
     public GameObject PataMuslo;
     public GameObject moneda;
+    Vector3 posMon;
+    Vector3 posPat;
+    
+    
     
     
     // Start is called before the first frame update
@@ -43,10 +49,12 @@ public class Enemigos : MonoBehaviour, IDamage
     //funcion de muerte de la gallina y se instancia la pata
     void Die()
     {
+        posMon = new Vector3(transform.position.x, 2, transform.position.z);
+        posPat = new Vector3(transform.position.x + 5, 1, transform.position.z);
         Destroy(gameObject);
-        Instantiate(PataMuslo, transform.position, transform.rotation);
-        Instantiate(moneda, transform.position, transform.rotation);
-       
+        Instantiate(PataMuslo, posPat, transform.rotation);
+        Instantiate(moneda, posMon, transform.rotation);
+        
     }
     
 
@@ -59,6 +67,7 @@ public class Enemigos : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
+        
         //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
         Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
         transform.LookAt(posNoRot); //para que la gallina nos mire
@@ -71,6 +80,8 @@ public class Enemigos : MonoBehaviour, IDamage
             Destroy(gameObject); //se destruye la gallina si se cae 
         }
     }
+
+    
 
     
 }

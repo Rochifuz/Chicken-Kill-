@@ -15,9 +15,13 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public float shotRateAk = 0.3f;//Tiempo de disparo de AK
     public float shotRateTime = 0;//Tiempo general de disparo
     public int numeroArma;//Contiene el numero de arma que tiene el player
+    public static int contador = 0;
+
+   
+   
     
-    
-    private void Start(){
+    private void Start()
+    {
         
     }
 
@@ -26,11 +30,12 @@ public class PlayerActions : MonoBehaviour, IDamage2
     private void Update()
     {
         
-
+        Debug.Log("La cantidad de gallinas son: "+ contador);
         numeroArma = GetComponent<AgarrarArmas>().numeroArmaActiva;//Trae el numero de arma que esta activa
         Debug.Log(numeroArma);//Te devuelve en la consola el numero de arma activa
         Debug.DrawRay(cam.position, cam.forward * 100f, Color.red);// traza una linea de la camara
         Debug.DrawRay(posGun.position, cam.forward * 100f, Color.blue);//traza una linea desde el arma
+        
 
         //Funciones en base que arma esta activa
 
@@ -127,6 +132,11 @@ public class PlayerActions : MonoBehaviour, IDamage2
 
     }
 
+    public void incremento(int puntaje)
+    {
+        contador = puntaje + contador;
+    }
+    
     
 }
 
