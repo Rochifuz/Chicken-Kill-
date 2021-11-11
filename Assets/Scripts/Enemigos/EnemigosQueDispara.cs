@@ -13,7 +13,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     public float intervaloDisparo = 2f;
     float shootTime;
     public int life = 15;//vida de la gallina
-
+    public int puntosQueDa = 1;
     public bool shootByPlayer;
 
     public static int contador2 = 0;
@@ -21,7 +21,9 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     NavMeshAgent agent;
 
     public GameObject PataMuslo;
-
+    public GameObject moneda;
+    Vector3 posMon;
+    Vector3 posPat;
 
     // Start is called before the first frame update
     void Start()
@@ -47,9 +49,13 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     //funcion de muerte de la gallina
     void Die()//aca se destruye la gallina y se instancia la pata en su lugar
     {
+        
+        posMon = new Vector3(transform.position.x, 2, transform.position.z);
+        posPat = new Vector3(transform.position.x + 5, 1, transform.position.z);
         Destroy(gameObject);
-        Instantiate(PataMuslo, transform.position, transform.rotation);
-
+        Instantiate(PataMuslo, posPat, transform.rotation);
+        Instantiate(moneda, posMon, transform.rotation);
+        
     }
 
 

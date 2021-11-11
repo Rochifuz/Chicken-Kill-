@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Monedas : MonoBehaviour
 {
-    PlayerActions jugador; 
+    
     public int puntosQueDa = 10;
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.tag=="Player")
-        {
-            jugador.GetComponent<PlayerActions>().incremento(puntosQueDa);
+        
+            collision.gameObject.GetComponent<PlayerActions>().incremento(puntosQueDa);
             Destroy(gameObject);
-        }
+        
     }
 }

@@ -16,7 +16,7 @@ public class Enemigos : MonoBehaviour, IDamage
     public bool shootByPlayer;
 
     NavMeshAgent agent;
-
+    public int puntosQueDa = 1;
     public GameObject PataMuslo;
     public GameObject moneda;
     Vector3 posMon;
@@ -49,6 +49,7 @@ public class Enemigos : MonoBehaviour, IDamage
     //funcion de muerte de la gallina y se instancia la pata
     void Die()
     {
+        
         posMon = new Vector3(transform.position.x, 2, transform.position.z);
         posPat = new Vector3(transform.position.x + 5, 1, transform.position.z);
         Destroy(gameObject);

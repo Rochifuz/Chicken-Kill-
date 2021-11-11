@@ -15,7 +15,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public float shotRateAk = 0.3f;//Tiempo de disparo de AK
     public float shotRateTime = 0;//Tiempo general de disparo
     public int numeroArma;//Contiene el numero de arma que tiene el player
-    public static int contador = 0;
+    public int contador = 0;
 
    
    
@@ -132,11 +132,16 @@ public class PlayerActions : MonoBehaviour, IDamage2
 
     }
 
-    public void incremento(int puntaje)
+    public void incremento(int valor)
     {
-        contador = puntaje + contador;
+        contador += valor;
     }
-    
-    
+
+    private void OnGUI()
+    {
+        GUI.contentColor = Color.black;
+        GUI.Label(new Rect(100, 10, 90, 40), "Puntaje Jugador: " + contador);
+    }
+
 }
 
