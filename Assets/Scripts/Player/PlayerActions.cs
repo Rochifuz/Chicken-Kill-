@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //Este script se encientra en player
 public class PlayerActions : MonoBehaviour, IDamage2
 {
@@ -16,13 +17,14 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public float shotRateTime = 0;//Tiempo general de disparo
     public int numeroArma;//Contiene el numero de arma que tiene el player
     public int contador = 0;
+    public Text recordText;
 
    
    
     
     private void Start()
     {
-        
+        recordText.text = "Record: " + MaximosPuntos().ToString();
     }
 
 
@@ -135,12 +137,28 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public void incremento(int valor)
     {
         contador += valor;
+        if(contador >= MaximosPuntos())
+        {
+            recordText.text = "Record: " + contador.ToString(); 
+            GuardarDatos(contador);
+        }
     }
 
     private void OnGUI()
     {
         GUI.contentColor = Color.black;
         GUI.Label(new Rect(800, 10, 500, 500), "Puntaje Jugador: " + contador);
+        
+    }
+
+    public int MaximosPuntos()
+    {
+        return PlayerPrefs.GetInt("Max Puntos", 0);
+    }
+
+    public void GuardarDatos(int puntosActual)
+    {
+        PlayerPrefs.SetInt("Max Puntos", puntosActual);
     }
 
 }
