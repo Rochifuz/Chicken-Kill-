@@ -1871,6 +1871,8 @@ GameObject:
   - component: {fileID: 54186851546604756}
   - component: {fileID: 136373561480327732}
   - component: {fileID: 2282508327052008930}
+  - component: {fileID: 8357857450940691517}
+  - component: {fileID: 4840662128464520848}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Enemigo
@@ -1968,6 +1970,36 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8357857450940691517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213206596740143696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac87b2f9b6c62cd4e8efab6baa691295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4840662128464520848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213206596740143696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e021d804bceb74489e88b15f242c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrontLegL: {fileID: 0}
+  FrontLegR: {fileID: 0}
+  RearLegL: {fileID: 0}
+  RearLegR: {fileID: 0}
+  moveAngle: 90
+  movSpeed: 1
 --- !u!1 &9213206596849299574
 GameObject:
   m_ObjectHideFlags: 0

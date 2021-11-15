@@ -11,6 +11,7 @@ TagManager:
   - PARED 3
   - PARED 4
   - BOSS
+  - Chicken
   layers:
   - Default
   - TransparentFX

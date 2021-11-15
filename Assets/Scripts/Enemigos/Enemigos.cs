@@ -8,7 +8,7 @@ public class Enemigos : MonoBehaviour, IDamage
     public GameObject target;
     float distanceToTarget;
     public int daño = 10;
-
+    private Animator animator;
     public int life = 15;
 
     public static int contador = 0;
@@ -30,7 +30,7 @@ public class Enemigos : MonoBehaviour, IDamage
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
-
+        animator = GetComponent<Animator>();
 
     }
     // este codigo es el daño de la bala a las gallinas
