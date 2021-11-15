@@ -30,7 +30,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
     private void Update()
     {
         
-        Debug.Log("La cantidad de gallinas son: "+ contador);
+        Debug.Log("La cantidad de puntos son: "+ contador);
         numeroArma = GetComponent<AgarrarArmas>().numeroArmaActiva;//Trae el numero de arma que esta activa
         Debug.Log(numeroArma);//Te devuelve en la consola el numero de arma activa
         Debug.DrawRay(cam.position, cam.forward * 100f, Color.red);// traza una linea de la camara
@@ -140,7 +140,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
     private void OnGUI()
     {
         GUI.contentColor = Color.black;
-        GUI.Label(new Rect(100, 10, 90, 40), "Puntaje Jugador: " + contador);
+        GUI.Label(new Rect(800, 10, 500, 500), "Puntaje Jugador: " + contador);
     }
 
 }
