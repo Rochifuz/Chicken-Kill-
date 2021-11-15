@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour, IDamage2
 {
 
-    public Transform posGun;//Posicion del arma
-    public Transform cam;//Posicion de camara
+    public Transform posGun; //Posicion del arma
+    public Transform cam; //Posicion de camara
     public GameObject bulletPrefab;//Llama al prefab de la bala
     public LayerMask ignoreLayer;//Ignorar la colision con el jugador
     RaycastHit hit;//Lanza un tiro desde, hacia(direccion) con un maximo de distancia 
