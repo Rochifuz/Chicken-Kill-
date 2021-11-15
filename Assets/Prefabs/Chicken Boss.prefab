@@ -224,8 +224,9 @@ MonoBehaviour:
   "da\xF1o": 10
   life: 15
   shootByPlayer: 0
+  puntosQueDa: 1
   PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
-  Moneda: {fileID: 7326430417920681106, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
+  moneda: {fileID: 0}
 --- !u!1 &241122855946364638
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +802,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e41f42f5e81b018479b0091156c9ecc6, type: 2}
+  - {fileID: 2100000, guid: 079065f1321f69f4ab70a3474fe75503, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
