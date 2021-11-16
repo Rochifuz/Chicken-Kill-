@@ -23611,7 +23611,7 @@ MonoBehaviour:
   horizontalSpeed: 100
   verticalSpeed: 100
   controller: {fileID: 1037109938}
-  speed: 30
+  speed: 15
   gravity: -15
   jumpForce: 1
 --- !u!4 &1037109940
@@ -39373,6 +39373,10 @@ PrefabInstance:
       propertyPath: m_CullingMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7447163605599512414, guid: 907fd825e3988774caab4234b943bf44, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 41873a2a014f11c4aaf7d1a225c9c63a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907fd825e3988774caab4234b943bf44, type: 3}
 --- !u!1001 &1762834505
