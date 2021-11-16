@@ -134,10 +134,10 @@ public class PlayerActions : MonoBehaviour, IDamage2
 
     }
 
-    public void incremento(int valor)
+    public void incremento(int valor) //Funcion en la cual incrementa los puntos
     {
         contador += valor;
-        if(contador >= MaximosPuntos())
+        if(contador >= MaximosPuntos()) //Si los puntos actuales son mayores al record, se envia los puntos actuales a la funcion guardar puntos.
         {
             recordText.text = "Record: " + contador.ToString(); 
             GuardarDatos(contador);
@@ -151,14 +151,14 @@ public class PlayerActions : MonoBehaviour, IDamage2
         
     }
 
-    public int MaximosPuntos()
+    public int MaximosPuntos() //El maximo de puntos se arranca en 0 
     {
-        return PlayerPrefs.GetInt("Max Puntos", 0);
+        return PlayerPrefs.GetInt("Max Puntos", 0); //El player prefs almacena un valor
     }
 
-    public void GuardarDatos(int puntosActual)
+    public void GuardarDatos(int puntosActual) // Aqui toma la cantidad de puntos actuales
     {
-        PlayerPrefs.SetInt("Max Puntos", puntosActual);
+        PlayerPrefs.SetInt("Max Puntos", puntosActual); 
     }
 
 }
