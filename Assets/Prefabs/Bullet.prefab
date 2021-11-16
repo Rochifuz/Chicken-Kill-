@@ -121,6 +121,8 @@ MonoBehaviour:
   shotRateAk: 0.3
   shotRateTime: 0
   numeroArma: 0
+  contador: 0
+  recordText: {fileID: 0}
 --- !u!114 &4531427407527266510
 MonoBehaviour:
   m_ObjectHideFlags: 0

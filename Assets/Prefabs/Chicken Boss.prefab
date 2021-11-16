@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7935507836486292192}
   - component: {fileID: 8852765567882357509}
   - component: {fileID: 8037032297757631749}
-  - component: {fileID: 7463737331513337713}
+  - component: {fileID: -2056392551393181841}
   m_Layer: 0
   m_Name: Chicken Boss
   m_TagString: BOSS
@@ -38,6 +38,7 @@ Transform:
   - {fileID: 3414299307938716273}
   - {fileID: 8856210828124564932}
   - {fileID: 1306689276680985912}
+  - {fileID: 7651738943637849739}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,10 +109,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.42922616
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.07077384}
 --- !u!82 &8037032297757631749
 AudioSource:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7463737331513337713
+--- !u!114 &-2056392551393181841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,16 +218,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 240328539667471170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b5d1c62be3b594fb14d973713e62c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e66392bdbb53eb439625afc549ecd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  weapon: {fileID: 7651738943637849739}
   "da\xF1o": 10
-  life: 15
-  shootByPlayer: 0
+  distanciaDisparo: 10
+  intervaloDisparo: 2
+  life: 100
   puntosQueDa: 1
+  shootByPlayer: 0
   PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
-  moneda: {fileID: 0}
+  moneda: {fileID: 5025973255641258439, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
 --- !u!1 &241122855946364638
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +291,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3193601962381584766}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1733445222073059316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7651738943637849739}
+  m_Layer: 0
+  m_Name: weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7651738943637849739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733445222073059316}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.003, y: 0.375, z: 0.356}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_Children: []
+  m_Father: {fileID: 3193601962381584766}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761273281359583283
 GameObject:
