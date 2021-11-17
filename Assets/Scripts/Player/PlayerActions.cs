@@ -22,10 +22,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
    
    
     
-    private void Start()
-    {
-        recordText.text = "Record: " + MaximosPuntos().ToString();
-    }
+  
 
 
 
@@ -148,7 +145,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
     {
         GUI.contentColor = Color.black;
         GUI.Label(new Rect(800, 10, 500, 500), "Puntaje Jugador: " + contador);
-        
+        GUI.Label(new Rect(1000, 10, 500, 500), "Record: " + MaximosPuntos().ToString());
     }
 
     public int MaximosPuntos() //El maximo de puntos se arranca en 0 
