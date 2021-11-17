@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Monedas : MonoBehaviour
 {
-    
+    public float x = 0;
+    public float y = 5;
+    public float z = 0;
+
     public int puntosQueDa = 10;
     private void OnCollisionEnter(Collision collision)
     {
@@ -12,5 +15,9 @@ public class Monedas : MonoBehaviour
             collision.gameObject.GetComponent<PlayerActions>().incremento(puntosQueDa);
             Destroy(gameObject);
         
+    }
+    private void Update()
+    {
+        transform.Rotate(x, y, z);
     }
 }
