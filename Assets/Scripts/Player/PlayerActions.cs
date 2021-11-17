@@ -19,10 +19,20 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public int contador = 0;
     public Text recordText;
 
-   
-   
-    
-  
+    GUIStyle smallFont;
+    GUIStyle largeFont;
+
+    void Start()
+    {
+        smallFont = new GUIStyle();
+        largeFont = new GUIStyle();
+
+        smallFont.fontSize = 10;
+        largeFont.fontSize = 32;
+    }
+
+
+
 
 
 
@@ -144,8 +154,9 @@ public class PlayerActions : MonoBehaviour, IDamage2
     private void OnGUI()
     {
         GUI.contentColor = Color.black;
-        GUI.Label(new Rect(800, 10, 500, 500), "Puntaje Jugador: " + contador);
-        GUI.Label(new Rect(1000, 10, 500, 500), "Record: " + MaximosPuntos().ToString());
+        GUI.Label(new Rect(800, 10, 500, 500), "Puntaje Jugador: " + contador, largeFont);
+        GUI.Label(new Rect(1250, 10, 500, 500), "Record: " + MaximosPuntos().ToString(), largeFont);
+        
     }
 
     public int MaximosPuntos() //El maximo de puntos se arranca en 0 
