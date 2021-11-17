@@ -2181,6 +2181,18 @@ MonoBehaviour:
     la P se pausa el juego.
 
 
+    Las monedas suman 10 puntos y el maximo de puntos
+    conseguidos se guardan en el Record
+
+
+    Las patas de pollos te curan al agarrarlas
+    10 de vida, en caso contrario desaparecen a los 5 seg
+
+
+
+
+
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
