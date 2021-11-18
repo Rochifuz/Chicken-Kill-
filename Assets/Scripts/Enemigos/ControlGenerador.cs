@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //este script se encuentra en generadorObjetos
-public class ControlGenerador : MonoBehaviour
+public class ControlGenerador : MonoBehaviourPun
 {
     public GameObject prefabEnemigos;//Enemigo comun
     public GameObject prefabEnemigos2;//Enemigo cque disapara

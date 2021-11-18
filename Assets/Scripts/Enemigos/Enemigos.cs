@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
 //script que se encuentra en el prefab toonchicken
 public class Enemigos : MonoBehaviour, IDamage
 {
