@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
 
           
-            Jump();
+            
 
 
             velocity.y += gravity * Time.deltaTime;
