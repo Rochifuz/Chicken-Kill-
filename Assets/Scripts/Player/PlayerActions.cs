@@ -155,7 +155,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
     {
         GUI.contentColor = Color.black;
         GUI.Label(new Rect(800, 10, 500, 500), "Puntaje Jugador: " + contador, largeFont);
-        GUI.Label(new Rect(1250, 10, 500, 500), "Record: " + MaximosPuntos().ToString(), largeFont);
+       
         
     }
 

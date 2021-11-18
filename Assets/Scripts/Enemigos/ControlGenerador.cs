@@ -153,4 +153,11 @@ public class ControlGenerador : MonoBehaviour
 
 
     }
+
+    private void OnGUI()
+    {
+        GUI.contentColor = Color.black;
+        GUI.Label(new Rect(1250, 10, 500, 500), "Oleada: "+ oleadaActual);
+
+    }
 }
