@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
+        if(view.IsMine)
+        { 
             LookMouse();//actualiza la camara adonde se vea el mouse
 
             if (isGrounded == true && velocity.y < 0)
@@ -59,13 +61,29 @@ public class PlayerMovement : MonoBehaviour
             }
 
 
-            Movement();
+          
             Jump();
 
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
-        
+
+        //Movement
+            x = Input.GetAxis("Horizontal");//Es a y d
+            z = Input.GetAxis("Vertical");//Es w y s
+
+            move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+
+        //Jump
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                isGrounded = false;
+                velocity.y = jumpValue;
+            }
+        }
+
     }
 
    
@@ -86,27 +104,9 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void Movement()//funcion de movimiento
-    {
-        
-            x = Input.GetAxis("Horizontal");//Es a y d
-            z = Input.GetAxis("Vertical");//Es w y s
+    
 
-            move = transform.right * x + transform.forward * z;
-            controller.Move(move * speed * Time.deltaTime);
-        
-    }
-
-    void Jump()//funcion de salto
-    {
-        
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                isGrounded = false;
-                velocity.y = jumpValue;
-            }
-        
-    }
+   
 
     //Cuando el personaje colisiona con el piso y el Grounded vuelva a true
 
