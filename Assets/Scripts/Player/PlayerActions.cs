@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 //Este script se encientra en player
 public class PlayerActions : MonoBehaviour, IDamage2
 {
@@ -19,6 +20,8 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public int contador = 0;
     public Text recordText;
 
+    PhotonView view;
+
     GUIStyle smallFont;
     GUIStyle largeFont;
 
@@ -29,6 +32,8 @@ public class PlayerActions : MonoBehaviour, IDamage2
 
         smallFont.fontSize = 10;
         largeFont.fontSize = 32;
+
+        view = GetComponent<PhotonView>();
     }
 
 
@@ -38,97 +43,108 @@ public class PlayerActions : MonoBehaviour, IDamage2
 
     private void Update()
     {
-        
-        Debug.Log("La cantidad de puntos son: "+ contador);
-        numeroArma = GetComponent<AgarrarArmas>().numeroArmaActiva;//Trae el numero de arma que esta activa
-        Debug.Log(numeroArma);//Te devuelve en la consola el numero de arma activa
-        Debug.DrawRay(cam.position, cam.forward * 100f, Color.red);// traza una linea de la camara
-        Debug.DrawRay(posGun.position, cam.forward * 100f, Color.blue);//traza una linea desde el arma
-        
-
-        //Funciones en base que arma esta activa
-
-        if(numeroArma == 1){
-        if(Input.GetMouseButtonDown(0))
+        if (view.IsMine)
         {
-            //le da una tiempo de recuperacion para volver a disparar
-            if(Time.time > shotRateTime)
-            {
-                shotRateTime = Time.time + shotRateAk;
-            
-            Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
-            Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
 
-            //GameObject bulletObj = Instantiate(bulletPrefab);
-            GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
 
-            bulletObj.transform.position = posGun.position;// la bala sale desde el arma
-            if(Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
+
+            Debug.Log("La cantidad de puntos son: " + contador);
+            numeroArma = GetComponent<AgarrarArmas>().numeroArmaActiva;//Trae el numero de arma que esta activa
+            Debug.Log(numeroArma);//Te devuelve en la consola el numero de arma activa
+            Debug.DrawRay(cam.position, cam.forward * 100f, Color.red);// traza una linea de la camara
+            Debug.DrawRay(posGun.position, cam.forward * 100f, Color.blue);//traza una linea desde el arma
+
+
+            //Funciones en base que arma esta activa
+
+            if (numeroArma == 1)
             {
-                bulletObj.transform.LookAt(hit.point);//La da la direccion a la bala de donde nosotros estamos mirando
+                if (Input.GetMouseButtonDown(0))
+                {
+                    //le da una tiempo de recuperacion para volver a disparar
+                    if (Time.time > shotRateTime)
+                    {
+                        shotRateTime = Time.time + shotRateAk;
+
+                        Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
+                        Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
+
+                        //GameObject bulletObj = Instantiate(bulletPrefab);
+                        GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
+
+                        bulletObj.transform.position = posGun.position;// la bala sale desde el arma
+                        if (Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
+                        {
+                            bulletObj.transform.LookAt(hit.point);//La da la direccion a la bala de donde nosotros estamos mirando
+                        }
+                        else
+                        {
+                            //Vector3 dir = cam.position + cam.forward * 10f;
+                            Vector3 dir = cam.position + direction * 10f;
+                            bulletObj.transform.LookAt(dir);
+                        }
+                    }
+                }
+            }
+            else if (numeroArma == 2)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (Time.time > shotRateTime)
+                    {
+
+                        shotRateTime = Time.time + shotRateUzi;
+
+                        Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
+                        Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
+
+                        //GameObject bulletObj = Instantiate(bulletPrefab);
+                        GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
+
+                        bulletObj.transform.position = posGun.position;// la bala sale desde el arma
+                        if (Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
+                        {
+                            bulletObj.transform.LookAt(hit.point);
+                        }
+                        else
+                        {
+                            //Vector3 dir = cam.position + cam.forward * 10f;
+                            Vector3 dir = cam.position + direction * 10f;
+                            bulletObj.transform.LookAt(dir);
+                        }
+
+                    }
+                }
             }
             else
             {
-                //Vector3 dir = cam.position + cam.forward * 10f;
-                Vector3 dir = cam.position + direction * 10f;
-                bulletObj.transform.LookAt(dir);
-            }
-            }
-        }
-        }else if(numeroArma ==2){
-        if(Input.GetMouseButtonDown(0))
-        {
-            if(Time.time > shotRateTime)
-            {
-            
-            shotRateTime = Time.time + shotRateUzi;
-            
-            Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
-            Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
+                if (Input.GetMouseButtonDown(0))
+                {
+                    //le da una tiempo de recuperacion para volver a disparar
+                    if (Time.time > shotRateTime)
+                    {
+                        shotRateTime = Time.time + shotRateGlock;
 
-            //GameObject bulletObj = Instantiate(bulletPrefab);
-            GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
+                        Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
+                        Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
 
-            bulletObj.transform.position = posGun.position;// la bala sale desde el arma
-            if(Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
-            {
-                bulletObj.transform.LookAt(hit.point);
-            }
-            else
-            {
-                //Vector3 dir = cam.position + cam.forward * 10f;
-                Vector3 dir = cam.position + direction * 10f;
-                bulletObj.transform.LookAt(dir);
-            }
-            
-        }}   
-        }else{
-         if(Input.GetMouseButtonDown(0))
-        {
-            //le da una tiempo de recuperacion para volver a disparar
-            if(Time.time > shotRateTime)
-            {
-                shotRateTime = Time.time + shotRateGlock;
-            
-            Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
-            Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
+                        //GameObject bulletObj = Instantiate(bulletPrefab);
+                        GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
 
-            //GameObject bulletObj = Instantiate(bulletPrefab);
-            GameObject bulletObj = ObjectPooling.instance.GetBullet(true);//instancia la bala al hacer click y dice que es del jugador
-
-            bulletObj.transform.position = posGun.position;// la bala sale desde el arma
-            if(Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
-            {
-                bulletObj.transform.LookAt(hit.point);
+                        bulletObj.transform.position = posGun.position;// la bala sale desde el arma
+                        if (Physics.Raycast(cam.position, direction, out hit, Mathf.Infinity, ~ignoreLayer))//le da la direccion a la bala y a su linea
+                        {
+                            bulletObj.transform.LookAt(hit.point);
+                        }
+                        else
+                        {
+                            //Vector3 dir = cam.position + cam.forward * 10f;
+                            Vector3 dir = cam.position + direction * 10f;
+                            bulletObj.transform.LookAt(dir);
+                        }
+                    }
+                }
             }
-            else
-            {
-                //Vector3 dir = cam.position + cam.forward * 10f;
-                Vector3 dir = cam.position + direction * 10f;
-                bulletObj.transform.LookAt(dir);
-            }
-            }
-        }   
         }
     }
     public void DoDamage2(int vld2, bool isPlayer2)
