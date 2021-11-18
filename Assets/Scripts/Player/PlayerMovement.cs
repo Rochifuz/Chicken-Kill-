@@ -38,11 +38,6 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//bloquea el cursor para cuando se mueva la camara del player
         jumpValue = Mathf.Sqrt(jumpForce * -2 * gravity);//fuerza del salto
         view = GetComponent<PhotonView>();
-
-        if (!view.IsMine)
-        {
-            enabled = false;
-        }
     }
 
     
