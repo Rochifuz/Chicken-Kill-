@@ -40,6 +40,14 @@ public class PlayerMovement : MonoBehaviour
         view = GetComponent<PhotonView>();
     }
 
+    void Awake()
+    {
+        if (!view.IsMine)
+        {
+            enabled = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
