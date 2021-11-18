@@ -65,8 +65,7 @@ public class PlayerMovement : MonoBehaviour
    
     void LookMouse()
     {
-        if (view.IsMine)
-        {
+        
             hMouse = Input.GetAxis("Mouse X") * horizontalSpeed * Time.deltaTime;
             vMouse = Input.GetAxis("Mouse Y") * verticalSpeed * Time.deltaTime;
 
@@ -78,31 +77,29 @@ public class PlayerMovement : MonoBehaviour
             //Rote en eje y
             cam.localRotation = Quaternion.Euler(yReal, 0f, 0f);
             //Controlador de rotacion
-        }
+        
     }
 
     void Movement()//funcion de movimiento
     {
-        if (view.IsMine)
-        {
+        
             x = Input.GetAxis("Horizontal");//Es a y d
             z = Input.GetAxis("Vertical");//Es w y s
 
             move = transform.right * x + transform.forward * z;
             controller.Move(move * speed * Time.deltaTime);
-        }
+        
     }
 
     void Jump()//funcion de salto
     {
-        if (view.IsMine)
-        {
+        
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 isGrounded = false;
                 velocity.y = jumpValue;
             }
-        }
+        
     }
 
     //Cuando el personaje colisiona con el piso y el Grounded vuelva a true
