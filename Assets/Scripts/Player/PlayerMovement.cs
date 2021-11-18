@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //script que se encuentra en el player
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 1f;
     float jumpValue;
 
+    PhotonView view;
+
 
   
 
@@ -34,25 +37,29 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;//bloquea el cursor para cuando se mueva la camara del player
         jumpValue = Mathf.Sqrt(jumpForce * -2 * gravity);//fuerza del salto
+        view = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        LookMouse();//actualiza la camara adonde se vea el mouse
-
-        if(isGrounded ==true && velocity.y < 0)
+        if(view.IsMine)
         {
-            velocity.y = gravity;
+            LookMouse();//actualiza la camara adonde se vea el mouse
+
+            if (isGrounded == true && velocity.y < 0)
+            {
+                velocity.y = gravity;
+            }
+
+
+            Movement();
+            Jump();
+
+
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
         }
-
-
-        Movement();
-        Jump();
-
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
     }
 
     void LookMouse()
