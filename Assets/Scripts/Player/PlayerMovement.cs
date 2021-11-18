@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 1f;
     float jumpValue;
 
-    PhotonView view;
 
 
   
@@ -37,14 +36,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;//bloquea el cursor para cuando se mueva la camara del player
         jumpValue = Mathf.Sqrt(jumpForce * -2 * gravity);//fuerza del salto
-        view = GetComponent<PhotonView>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(view.IsMine)
-        {
+        
             LookMouse();//actualiza la camara adonde se vea el mouse
 
             if (isGrounded == true && velocity.y < 0)
@@ -59,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
-        }
+        
     }
 
     void LookMouse()
