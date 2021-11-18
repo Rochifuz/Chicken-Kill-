@@ -62,36 +62,46 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+   
     void LookMouse()
     {
-        hMouse = Input.GetAxis("Mouse X") * horizontalSpeed * Time.deltaTime;
-        vMouse = Input.GetAxis("Mouse Y") * verticalSpeed * Time.deltaTime;
+        if (view.IsMine)
+        {
+            hMouse = Input.GetAxis("Mouse X") * horizontalSpeed * Time.deltaTime;
+            vMouse = Input.GetAxis("Mouse Y") * verticalSpeed * Time.deltaTime;
 
-        yReal -= vMouse; 
-        //Para que cuando subamos mouse vaya para arriba
-        yReal = Mathf.Clamp(yReal, -90f, 90f); 
-        //Limites de mouse
-        transform.Rotate(0f, hMouse, 0f); 
-        //Rote en eje y
-        cam.localRotation = Quaternion.Euler(yReal, 0f, 0f); 
-        //Controlador de rotacion
+            yReal -= vMouse;
+            //Para que cuando subamos mouse vaya para arriba
+            yReal = Mathf.Clamp(yReal, -90f, 90f);
+            //Limites de mouse
+            transform.Rotate(0f, hMouse, 0f);
+            //Rote en eje y
+            cam.localRotation = Quaternion.Euler(yReal, 0f, 0f);
+            //Controlador de rotacion
+        }
     }
 
     void Movement()//funcion de movimiento
     {
-        x = Input.GetAxis("Horizontal");//Es a y d
-        z = Input.GetAxis("Vertical");//Es w y s
+        if (view.IsMine)
+        {
+            x = Input.GetAxis("Horizontal");//Es a y d
+            z = Input.GetAxis("Vertical");//Es w y s
 
-        move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime); 
+            move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+        }
     }
 
     void Jump()//funcion de salto
     {
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (view.IsMine)
         {
-            isGrounded = false;
-            velocity.y = jumpValue;
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                isGrounded = false;
+                velocity.y = jumpValue;
+            }
         }
     }
 
