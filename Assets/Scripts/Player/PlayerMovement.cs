@@ -62,26 +62,14 @@ public class PlayerMovement : MonoBehaviour
 
 
           
-            
+            Jump();
+
+            Movement();
 
 
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
 
-        //Movement
-            x = Input.GetAxis("Horizontal");//Es a y d
-            z = Input.GetAxis("Vertical");//Es w y s
-
-            move = transform.right * x + transform.forward * z;
-            controller.Move(move * speed * Time.deltaTime);
-
-        //Jump
-
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                isGrounded = false;
-                velocity.y = jumpValue;
-            }
         }
 
     }
@@ -104,9 +92,25 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    
+    void Movement()
+    { 
+            x = Input.GetAxis("Horizontal");//Es a y d
+            z = Input.GetAxis("Vertical");//Es w y s
 
-   
+            move = transform.right* x + transform.forward* z;
+            controller.Move(move* speed * Time.deltaTime);
+    }
+
+    void Jump()
+    { 
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                isGrounded = false;
+                velocity.y = jumpValue;
+            }
+    }
+
 
     //Cuando el personaje colisiona con el piso y el Grounded vuelva a true
 
