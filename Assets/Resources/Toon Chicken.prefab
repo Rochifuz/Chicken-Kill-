@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 1506997037337262431}
   - component: {fileID: 213312483214471450}
   - component: {fileID: -7513201111845147129}
+  - component: {fileID: 6701853839150578634}
   m_Layer: 0
   m_Name: Toon Chicken
   m_TagString: Enemigo
@@ -533,7 +534,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -7513201111845147129}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -553,6 +555,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &6701853839150578634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311290861401530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d51036f248bee428dc9a2c99606628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codigosQueIgnorar:
+  - {fileID: -2092530360188770994}
 --- !u!1 &1325880688823160
 GameObject:
   m_ObjectHideFlags: 0

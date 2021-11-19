@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -2056392551393181841}
   - component: {fileID: -2985281790727530724}
   - component: {fileID: -3474226053660811657}
+  - component: {fileID: 6074729704502426183}
   m_Layer: 0
   m_Name: Chicken Boss
   m_TagString: BOSS
@@ -251,7 +252,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -3474226053660811657}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -271,6 +273,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &6074729704502426183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240328539667471170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d51036f248bee428dc9a2c99606628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codigosQueIgnorar:
+  - {fileID: -2056392551393181841}
 --- !u!1 &241122855946364638
 GameObject:
   m_ObjectHideFlags: 0
