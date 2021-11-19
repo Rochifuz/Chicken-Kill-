@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //este script se encuentra en el gambeObject PataMuslo
-public class VidaPataParaPlayer : MonoBehaviour
+public class VidaPataParaPlayer : MonoBehaviourPun
 {
     public int vidaPlayer = 10;
     public float tiempo = 0;
@@ -27,7 +28,7 @@ public class VidaPataParaPlayer : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<VidaPlayer>().vida += vidaPlayer;//suma la vida al jugador
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
             Debug.Log("TocandoPataMuslo");
         }
     }
@@ -38,7 +39,7 @@ public class VidaPataParaPlayer : MonoBehaviour
         
         if(tiempo > tiempoPata)
         {
-             Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
         
     }

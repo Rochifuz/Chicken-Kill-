@@ -55,22 +55,22 @@ public class ControlGenerador : MonoBehaviourPun
             }
             if (oleadaActual == 2)//Funcion que te destruye las paredes
             {
-                Destroy(GameObject.FindGameObjectWithTag("PARED"));
+                PhotonNetwork.Destroy(GameObject.FindGameObjectWithTag("PARED"));
             }
 
             if (oleadaActual == 5)//Funcion que te destruye las paredes
             {
-                Destroy(GameObject.FindGameObjectWithTag("PARED 2"));
+                PhotonNetwork.Destroy(GameObject.FindGameObjectWithTag("PARED 2"));
             }
 
             if (oleadaActual == 8)//Funcion que te destruye las paredes
             {
-                Destroy(GameObject.FindGameObjectWithTag("PARED 3"));
+                PhotonNetwork.Destroy(GameObject.FindGameObjectWithTag("PARED 3"));
             }
 
             if (oleadaActual == 8)//Funcion que te destruye las paredes
             {
-                Destroy(GameObject.FindGameObjectWithTag("PARED 4"));
+                PhotonNetwork.Destroy(GameObject.FindGameObjectWithTag("PARED 4"));
             }
 
         }

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //Este script se encuentra en el GameObject de las Armas
-public class ActivarArmaPersonaje : MonoBehaviour
+public class ActivarArmaPersonaje : MonoBehaviourPun
 {
     public AgarrarArmas agarrarArma;
     public int numeroArma;
@@ -17,7 +18,7 @@ public class ActivarArmaPersonaje : MonoBehaviour
             agarrarArma = other.GetComponent<AgarrarArmas>();//Esta obtiene el numero del arma con la que colisiona
             agarrarArma.ActivarArmar(numeroArma); //Esta activa el arma segun su numero
             agarrarArma.numeroArmaActiva = numeroArma; //esta me dice que arma activa tengo en la mano
-            Destroy(gameObject); //Esto destruye el gameobject del piso
+            PhotonNetwork.Destroy(gameObject); //Esto destruye el gameobject del piso
         }
     }
 }

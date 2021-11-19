@@ -54,7 +54,7 @@ public class Enemigos : MonoBehaviourPun, IDamage
         
         posMon = new Vector3(transform.position.x, 2, transform.position.z);
         posPat = new Vector3(transform.position.x + 5, 1, transform.position.z);
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
         PhotonNetwork.Instantiate(PataMuslo.name, posPat, transform.rotation);
         PhotonNetwork.Instantiate(moneda.name, posMon, transform.rotation);
         
@@ -80,7 +80,7 @@ public class Enemigos : MonoBehaviourPun, IDamage
 
         if (transform.position.y < -10)
         {
-            Destroy(gameObject); //se destruye la gallina si se cae 
+            PhotonNetwork.Destroy(gameObject); //se destruye la gallina si se cae 
         }
     }
 
