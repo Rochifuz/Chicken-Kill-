@@ -19262,7 +19262,6 @@ GameObject:
   - component: {fileID: 3650510927617745137}
   - component: {fileID: 7084561137082152310}
   - component: {fileID: 5166272325616807779}
-  - component: {fileID: 8634049881626374274}
   m_Layer: 0
   m_Name: Magic fire pro orange
   m_TagString: Untagged
@@ -24119,18 +24118,3 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &8634049881626374274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725317912486240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d51036f248bee428dc9a2c99606628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codigosQueIgnorar:
-  - {fileID: 8634049881626374274}
-  - {fileID: 7084561137082152310}

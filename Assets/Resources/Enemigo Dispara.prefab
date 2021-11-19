@@ -228,7 +228,6 @@ GameObject:
   - component: {fileID: 6664456157531475013}
   - component: {fileID: 1269771275912314323}
   - component: {fileID: 1418230716122856783}
-  - component: {fileID: -1133041158064010414}
   m_Layer: 0
   m_Name: Enemigo Dispara
   m_TagString: Enemigo
@@ -467,21 +466,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-1133041158064010414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503924010314363394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d51036f248bee428dc9a2c99606628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codigosQueIgnorar:
-  - {fileID: 1269771275912314323}
-  - {fileID: -1133041158064010414}
 --- !u!1 &3507462087977881502
 GameObject:
   m_ObjectHideFlags: 0

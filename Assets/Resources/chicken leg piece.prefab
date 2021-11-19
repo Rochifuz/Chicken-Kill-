@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1881887102383442909}
   - component: {fileID: 4559702867748332601}
   - component: {fileID: -1279810435339633696}
-  - component: {fileID: -6997763641280623390}
   m_Layer: 0
   m_Name: chicken leg piece
   m_TagString: Untagged
@@ -152,18 +151,3 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-6997763641280623390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2921134319588251144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d51036f248bee428dc9a2c99606628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codigosQueIgnorar:
-  - {fileID: -6997763641280623390}
-  - {fileID: 1881887102383442909}
