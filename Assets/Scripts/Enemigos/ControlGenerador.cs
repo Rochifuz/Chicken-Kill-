@@ -24,12 +24,14 @@ public class ControlGenerador : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        
         numeroEnemigos = FindObjectsOfType<Enemigos>().Length;
 
         if (numeroEnemigos == 0)
         {
             if (oleadaActual < numeroMaxOleadas)//mientras la oleada sea menor al maximo de oleadas se siguen invocando enemigos
             {
+                Debug.Log("Es la oleada: "+oleadaActual);
                 oleadaActual++;
                 cantidadEnemigos = incrementoEnemigos(oleadaActual - oleadaInicial + 1);
                 if (oleadaActual >= 1)//si se alcanza la oleada dos se divide la invocacion de cada prefab en 2 para que la cantidad sea la correcta
@@ -81,15 +83,15 @@ public class ControlGenerador : MonoBehaviourPun
 
         for (int i = 0; i < cantidadEnemigos; i++)// esta funcion instancia los enemigos con un ciclo for y en el lugar que se le da
         {
-            Instantiate(instanciaEnemigo, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
+            PhotonNetwork.Instantiate(instanciaEnemigo.name, DamePosicionGeneracion(), instanciaEnemigo.transform.rotation);
             if(oleadaActual > 1)
             {
-                Instantiate(instanciaEnemigo, DamePosicionGeneracion2(), instanciaEnemigo.transform.rotation);
+                PhotonNetwork.Instantiate(instanciaEnemigo.name, DamePosicionGeneracion2(), instanciaEnemigo.transform.rotation);
             }
 
             if(oleadaActual > 2)
             {
-                Instantiate(instanciaEnemigo, DamePosicionGeneracion3(), instanciaEnemigo.transform.rotation);
+                PhotonNetwork.Instantiate(instanciaEnemigo.name, DamePosicionGeneracion3(), instanciaEnemigo.transform.rotation);
             }
         }
     }
@@ -98,7 +100,7 @@ public class ControlGenerador : MonoBehaviourPun
     {
         if(oleadaActual > 2)
         {
-            Instantiate(instanciaEnemigo2, DamePosicionGeneracion4(), instanciaEnemigo2.transform.rotation);
+            PhotonNetwork.Instantiate(instanciaEnemigo2.name, DamePosicionGeneracion4(), instanciaEnemigo2.transform.rotation);
         }      
     }
 

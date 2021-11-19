@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8852765567882357509}
   - component: {fileID: 8037032297757631749}
   - component: {fileID: -2056392551393181841}
+  - component: {fileID: -2985281790727530724}
   m_Layer: 0
   m_Name: Chicken Boss
   m_TagString: BOSS
@@ -231,6 +232,28 @@ MonoBehaviour:
   shootByPlayer: 0
   PataMuslo: {fileID: 2921134319588251144, guid: 16acbe5bed5d99944a567da1b7fcb438, type: 3}
   moneda: {fileID: 5025973255641258439, guid: ab85ff7796a7e2447b0a4788c9e2a676, type: 3}
+--- !u!114 &-2985281790727530724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240328539667471170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &241122855946364638
 GameObject:
   m_ObjectHideFlags: 0

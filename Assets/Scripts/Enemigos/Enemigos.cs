@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 //script que se encuentra en el prefab toonchicken
-public class Enemigos : MonoBehaviour, IDamage
+public class Enemigos : MonoBehaviourPun, IDamage
 {
     public GameObject target;
     float distanceToTarget;
@@ -54,8 +55,8 @@ public class Enemigos : MonoBehaviour, IDamage
         posMon = new Vector3(transform.position.x, 2, transform.position.z);
         posPat = new Vector3(transform.position.x + 5, 1, transform.position.z);
         Destroy(gameObject);
-        Instantiate(PataMuslo, posPat, transform.rotation);
-        Instantiate(moneda, posMon, transform.rotation);
+        PhotonNetwork.Instantiate(PataMuslo.name, posPat, transform.rotation);
+        PhotonNetwork.Instantiate(moneda.name, posMon, transform.rotation);
         
     }
     

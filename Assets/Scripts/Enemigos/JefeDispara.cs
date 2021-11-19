@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 //este script se encuentra en el prefab chicken que es la segunda gallina
-public class JefeDispara : MonoBehaviour, IDamage
+public class JefeDispara : MonoBehaviourPun, IDamage
 {
     public GameObject target;
     public Transform weapon;
@@ -53,8 +54,8 @@ public class JefeDispara : MonoBehaviour, IDamage
         posMon = new Vector3(transform.position.x, 2, transform.position.z);
         posPat = new Vector3(transform.position.x + 5, 1, transform.position.z);
         Destroy(gameObject);
-        Instantiate(PataMuslo, posPat, transform.rotation);
-        Instantiate(moneda, posMon, transform.rotation);
+        PhotonNetwork.Instantiate(PataMuslo.name, posPat, transform.rotation);
+        PhotonNetwork.Instantiate(moneda.name, posMon, transform.rotation);
         
     }
 

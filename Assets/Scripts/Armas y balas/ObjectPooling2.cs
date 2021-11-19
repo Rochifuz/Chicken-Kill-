@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 //este script se encuentra en el GameObject de PoolingManager
-public class ObjectPooling2 : MonoBehaviour
+public class ObjectPooling2 : MonoBehaviourPun
 {
     struct BulletInfos// aca se define el prefab de las balas que se utiliza y que script es el que usa la bala
     {
@@ -23,7 +24,7 @@ public class ObjectPooling2 : MonoBehaviour
         for(int i = 0; i<bulletAmount; i++)
         {
             BulletInfos BPrefab;
-            BPrefab.prefab = Instantiate(bulletPrefab);
+            BPrefab.prefab = PhotonNetwork.Instantiate(bulletPrefab.name, transform.position, Quaternion.identity);
             BPrefab.prefab.transform.SetParent(transform);
             BPrefab.prefab.SetActive(false);
             BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet2>();
@@ -45,7 +46,7 @@ public class ObjectPooling2 : MonoBehaviour
         }
         // Esto crea una nueva bala si ya se lleno la lista de las 5 balas
         BulletInfos BPrefab;
-        BPrefab.prefab = Instantiate(bulletPrefab);
+        BPrefab.prefab = PhotonNetwork.Instantiate(bulletPrefab.name, transform.position, Quaternion.identity);
         BPrefab.prefab.transform.SetParent(transform);
         BPrefab.prefab.SetActive(true);
         BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet2>();
