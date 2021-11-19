@@ -25,8 +25,8 @@ public class VidaPlayer : MonoBehaviourPun
     {
         
             Debug.Log("La vida es: " + vida);
-            vida = Mathf.Clamp(vida, 0, 100);//Esta funcion llena un valor entre un minimo y maximo
-            barradeVida.fillAmount = vida / 100;//Ingresa a la propiedad de barra de vida llamada fill amount y calcula la vida actual sobre la vida maxima
+            //vida = Mathf.Clamp(vida, 0, 100);//Esta funcion llena un valor entre un minimo y maximo
+            //barradeVida.fillAmount = vida / 100;//Ingresa a la propiedad de barra de vida llamada fill amount y calcula la vida actual sobre la vida maxima
             if (vida == 0)
             {
                 //Aca te va a mostrar si es que tu vida llega a 0, un cartel que perdiste y destruye el Game Object
