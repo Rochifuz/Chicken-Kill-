@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 //Este script se encientra en player
-public class PlayerActions : MonoBehaviour, IDamage2
+public class PlayerActions : MonoBehaviourPun, IDamage2
 {
 
     public Transform posGun; //Posicion del arma
@@ -18,6 +19,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
     public int numeroArma;//Contiene el numero de arma que tiene el player
     public int contador = 0;
     public Text recordText;
+    PhotonView view;
 
 
 

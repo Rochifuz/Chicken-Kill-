@@ -13,6 +13,7 @@ public class Enemigos : MonoBehaviourPun, IDamage
     private Animator animator;
     public int life = 15;
 
+
     public static int contador = 0;
 
     public bool shootByPlayer;
@@ -71,6 +72,7 @@ public class Enemigos : MonoBehaviourPun, IDamage
     void Update()
     {
         
+
         //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
         Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
         transform.LookAt(posNoRot); //para que la gallina nos mire

@@ -13,6 +13,8 @@ public class VidaPlayer : MonoBehaviourPun
     
 
     
+
+    
     
     //funcion de muerte
     void Die()
@@ -23,6 +25,7 @@ public class VidaPlayer : MonoBehaviourPun
     
     void Update()
     {
+
         
             Debug.Log("La vida es: " + vida);
             //vida = Mathf.Clamp(vida, 0, 100);//Esta funcion llena un valor entre un minimo y maximo

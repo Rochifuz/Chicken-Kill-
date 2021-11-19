@@ -19,6 +19,7 @@ public class Monedas : MonoBehaviourPun
     }
     private void Update()
     {
+        
         transform.Rotate(x, y, z);
     }
 }

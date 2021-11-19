@@ -7,10 +7,11 @@ public class ActivarArmaPersonaje : MonoBehaviourPun
 {
     public AgarrarArmas agarrarArma;
     public int numeroArma;
+    PhotonView view;
     // Start is called before the first frame update
-    
-  
-        //esta funcion se encarga de que cuando colisiona el player con el gameobject del arma se le active y destruya la que ya tiene
+
+
+    //esta funcion se encarga de que cuando colisiona el player con el gameobject del arma se le active y destruya la que ya tiene
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -21,4 +22,6 @@ public class ActivarArmaPersonaje : MonoBehaviourPun
             PhotonNetwork.Destroy(gameObject); //Esto destruye el gameobject del piso
         }
     }
+
+    
 }

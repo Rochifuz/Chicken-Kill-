@@ -8,6 +8,7 @@ public class VidaPataParaPlayer : MonoBehaviourPun
     public int vidaPlayer = 10;
     public float tiempo = 0;
     public int tiempoPata = 5;
+    PhotonView view;
 
     // Start is called before the first frame update
 
@@ -19,6 +20,7 @@ public class VidaPataParaPlayer : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        
         diePata();//destruye la pata cuando pasa el tiempo
 
 
