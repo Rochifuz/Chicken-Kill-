@@ -51,25 +51,27 @@ public class PlayerMovement : Photon.Pun.MonoBehaviourPun
     void Update()
     {
 
-        if (view.IsMine) 
-        { 
-            LookMouse();//actualiza la camara adonde se vea el mouse
+           if(view.IsMine)
+           {
+                LookMouse();//actualiza la camara adonde se vea el mouse
 
-            if (isGrounded == true && velocity.y < 0)
-            {
-                velocity.y = gravity;
-            }
-
-
-
-            Jump();
-
-            Movement();
+                if (isGrounded == true && velocity.y < 0)
+                {
+                    velocity.y = gravity;
+                }
 
 
-            velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * Time.deltaTime);
-        }
+
+                Jump();
+
+                Movement();
+
+
+                velocity.y += gravity * Time.deltaTime;
+                controller.Move(velocity * Time.deltaTime);
+
+
+           }
 
 
     }

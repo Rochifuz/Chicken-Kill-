@@ -17,6 +17,7 @@ public class ControlGenerador : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        if (!Photon.Pun.PhotonNetwork.IsMasterClient && Photon.Pun.PhotonNetwork.CurrentRoom != null) return;
         GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);//Esto cuenta cuantos enemigos hay instanciados y que prefab se utiliza
         GeneradorEnemigos2(oleadaInicial, prefabEnemigos3);//Te crea solo un prefab del boss en la posicion final
     }
@@ -24,13 +25,18 @@ public class ControlGenerador : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        
-        numeroEnemigos = FindObjectsOfType<Enemigos>().Length;
 
+
+        //numeroEnemigos = FindObjectsOfType<Enemigos>().Length;
+        numeroEnemigos = GameObject.FindGameObjectsWithTag("Enemigo").Length;
         if (numeroEnemigos == 0)
         {
+            if (!Photon.Pun.PhotonNetwork.IsMasterClient && Photon.Pun.PhotonNetwork.CurrentRoom != null) return;
+
             if (oleadaActual < numeroMaxOleadas)//mientras la oleada sea menor al maximo de oleadas se siguen invocando enemigos
             {
+                if (!Photon.Pun.PhotonNetwork.IsMasterClient && Photon.Pun.PhotonNetwork.CurrentRoom != null) return;
+
                 Debug.Log("Es la oleada: "+oleadaActual);
                 oleadaActual++;
                 cantidadEnemigos = incrementoEnemigos(oleadaActual - oleadaInicial + 1);
