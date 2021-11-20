@@ -23,7 +23,7 @@ public class ControlGenerador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        numeroEnemigos = FindObjectsOfType<Enemigos>().Length;
+        numeroEnemigos = GameObject.FindGameObjectsWithTag("Enemigo").Length;
 
         if (numeroEnemigos == 0)
         {
