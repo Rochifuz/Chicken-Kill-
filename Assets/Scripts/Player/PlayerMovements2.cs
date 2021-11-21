@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 //script que se encuentra en el player
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovements2 : MonoBehaviour
 {
     //Camara
     public Transform cam;//Posicion de camara
-    float vMouse;//Variable del eje vertical
-    float hMouse;//Variable del eje horizontal
-    float yReal = 0.0f;//Variable del eje y
+    //float vMouse;//Variable del eje vertical
+    //float hMouse;//Variable del eje horizontal
+    //float yReal = 0.0f;//Variable del eje y
     public float horizontalSpeed;//Variable del la velocidad del eje h
     public float verticalSpeed;//Variable del la velocidad del eje v
     //Movimiento
     public CharacterController controller;//Control del personaje mediante la funcion Move
     public float speed = 10f;
-    float x;//Variable del movimiento horizontal
+    //float x;//Variable del movimiento horizontal
     float z;//Variable del movimiento vertical
     Vector3 move; //Variable que te trasforma constantemente la direccion
     //Gravedad
     Vector3 velocity;
     public float gravity = -15f;
-    bool isGrounded = false; 
+    bool isGrounded = false;
     //Salto
     public float jumpForce = 1f;
     float jumpValue;
 
 
-  
+
 
 
     // Start is called before the first frame update
@@ -39,9 +39,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookMouse();//actualiza la camara adonde se vea el mouse
+        //LookMouse(); // actualiza la camara adonde se vea el mouse
 
-        if(isGrounded ==true && velocity.y < 0)
+        if (isGrounded == true && velocity.y < 0)
         {
             velocity.y = gravity;
         }
@@ -55,33 +55,33 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void LookMouse()
-    {
-        hMouse = Input.GetAxis("Mouse X") * horizontalSpeed * Time.deltaTime;
-        vMouse = Input.GetAxis("Mouse Y") * verticalSpeed * Time.deltaTime;
+    //void LookMouse()
+    //{
+    //    hMouse = Input.GetAxis("Mouse X") * horizontalSpeed * Time.deltaTime;
+    //    vMouse = Input.GetAxis("Mouse Y") * verticalSpeed * Time.deltaTime;
 
-        yReal -= vMouse; 
-        //Para que cuando subamos mouse vaya para arriba
-        yReal = Mathf.Clamp(yReal, -90f, 90f); 
-        //Limites de mouse
-        transform.Rotate(0f, hMouse, 0f); 
-        //Rote en eje y
-        cam.localRotation = Quaternion.Euler(yReal, 0f, 0f); 
-        //Controlador de rotacion
-    }
+    //    yReal -= vMouse;
+    //    //Para que cuando subamos mouse vaya para arriba
+    //    yReal = Mathf.Clamp(yReal, -90f, 90f);
+    //    //Limites de mouse
+    //    transform.Rotate(0f, hMouse, 0f);
+    //    //Rote en eje y
+    //    cam.localRotation = Quaternion.Euler(yReal, 0f, 0f);
+    //   //Controlador de rotacion
+    //}
 
     void Movement()//funcion de movimiento
     {
-        x = Input.GetAxis("Horizontal");//Es flecha izquierda y flecha derecha
-        z = Input.GetAxis("Vertical");//Es flecha arriba y flecha abajo
+        //x = Input.GetAxis("Horizontal2");//Es a y d
+        z = Input.GetAxis("Vertical2");//Es w y s
 
-        move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime); 
+        move = transform.forward * z;
+        controller.Move(move * speed * Time.deltaTime);
     }
 
-    void Jump()//funcion de salto con space
+    void Jump()//funcion de salto letra e
     {
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump2") && isGrounded)
         {
             isGrounded = false;
             velocity.y = jumpValue;
@@ -92,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.collider.CompareTag("floor"))
+        if (hit.collider.CompareTag("floor"))
         {
-            if(isGrounded == false)
+            if (isGrounded == false)
             {
                 isGrounded = true;
             }
