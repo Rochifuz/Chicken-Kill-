@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class Enemigos : MonoBehaviour, IDamage
 {
     public GameObject target;
+    public GameObject target2;
     float distanceToTarget;
+    float distanceToTarget2;
     public int daño = 10;
     private Animator animator;
     public int life = 15;
@@ -29,8 +31,8 @@ public class Enemigos : MonoBehaviour, IDamage
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player");
-        animator = GetComponent<Animator>();
+        
+        
 
     }
     // este codigo es el daño de la bala a las gallinas
@@ -68,14 +70,26 @@ public class Enemigos : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
+        target2 = GameObject.FindGameObjectWithTag("Player 2");
         
-        //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
-        Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-        transform.LookAt(posNoRot); //para que la gallina nos mire
         distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+        distanceToTarget2 = Vector3.Distance(transform.position, target2.transform.position);
         //distance calcula la distancia entre la gallina y nosotros
-        agent.SetDestination(target.transform.position); //para que la gallina nos persiga
-
+        if (distanceToTarget < distanceToTarget2)
+        {
+            //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
+            Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+            transform.LookAt(posNoRot); //para que la gallina nos mire
+            agent.SetDestination(target.transform.position); //para que la gallina nos persiga
+        }
+        else
+            {
+            Vector3 posNoRot2 = new Vector3(target2.transform.position.x, transform.position.y, target2.transform.position.z);
+            transform.LookAt(posNoRot2);
+            agent.SetDestination(target2.transform.position);
+            }
+        
         if (transform.position.y < -10)
         {
             Destroy(gameObject); //se destruye la gallina si se cae 

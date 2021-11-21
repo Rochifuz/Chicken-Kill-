@@ -12,6 +12,7 @@ TagManager:
   - PARED 4
   - BOSS
   - Chicken
+  - Player 2
   layers:
   - Default
   - TransparentFX
