@@ -12,7 +12,7 @@ public class JefeDispara : MonoBehaviour, IDamage
     public float distanciaDisparo = 10f;
     public float intervaloDisparo = 2f;
     float shootTime;
-    public int life = 15;//vida de la gallina
+    public int life = 100;//vida de la gallina
     public int puntosQueDa = 1;
     public bool shootByPlayer;
 
