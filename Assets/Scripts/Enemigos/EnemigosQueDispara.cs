@@ -6,8 +6,10 @@ using UnityEngine.AI;
 public class EnemigosQueDispara : MonoBehaviour, IDamage
 {
     public GameObject target;
+    public GameObject target2;
     public Transform weapon;
     float distanceToTarget;
+    float distanceToTarget2;
     public int daño = 10;
     public float distanciaDisparo = 10f;
     public float intervaloDisparo = 2f;
@@ -29,7 +31,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player");
+        
         shootTime = intervaloDisparo;
 
     }
@@ -63,13 +65,28 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        
-        //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
-        Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-        transform.LookAt(posNoRot); //para que la gallina nos mire
-        distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+        target = GameObject.FindGameObjectWithTag("Player");
+        target2 = GameObject.FindGameObjectWithTag("Player 2");
+
         //distance calcula la distancia entre la gallina y nosotros
-        agent.SetDestination(target.transform.position); //para que la gallina nos persiga
+        distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+        distanceToTarget2 = Vector3.Distance(transform.position, target2.transform.position);
+        
+
+        if (distanceToTarget < distanceToTarget2)
+        {
+            //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
+            Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+            transform.LookAt(posNoRot); //para que la gallina nos mire
+            agent.SetDestination(target.transform.position); //para que la gallina nos persiga
+        }
+
+        else
+        {
+            Vector3 posNoRot2 = new Vector3(target2.transform.position.x, transform.position.y, target2.transform.position.z);
+            transform.LookAt(posNoRot2);
+            agent.SetDestination(target2.transform.position);
+        }
 
         if (transform.position.y < -10)
         {

@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class VidaPlayer : MonoBehaviour
 {
     public float vida = 100;
-    
+
     public Image barradeVida;
+
+   
 
     //funcion de muerte
     public void Die()
     {
-        Destroy(gameObject);        
+        Destroy(gameObject);
+       
         
     }
     
@@ -30,6 +33,7 @@ public class VidaPlayer : MonoBehaviour
 
         }
         
+
     }
     
 }
