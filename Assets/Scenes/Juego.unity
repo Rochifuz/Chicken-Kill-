@@ -20113,7 +20113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 100
-  barradeVida: {fileID: 1145395613}
+  barradeVida: {fileID: 1156991565}
 --- !u!114 &897799673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26625,7 +26625,7 @@ GameObject:
   - component: {fileID: 1156991566}
   - component: {fileID: 1156991565}
   m_Layer: 5
-  m_Name: Vida
+  m_Name: Vida 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
