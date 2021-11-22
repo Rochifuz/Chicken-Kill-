@@ -10,7 +10,7 @@ public class JefeDispara : MonoBehaviour, IDamage
     public Transform weapon;
     float distanceToTarget;
     float distanceToTarget2;
-    public int daño = 10;
+    public int daño = 30;
     public float distanciaDisparo = 10f;
     public float intervaloDisparo = 2f;
     float shootTime;

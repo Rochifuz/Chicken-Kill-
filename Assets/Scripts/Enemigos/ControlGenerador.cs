@@ -9,7 +9,7 @@ public class ControlGenerador : MonoBehaviour
     public GameObject prefabEnemigos3;//Enemigo boss
     public int numeroEnemigos;
     // public int enemigoInicial = 1; // cant de enemigos en la primer oleada
-    public int numeroMaxOleadas = 10; // la cant maxima de oleadas del nivel
+    public int numeroMaxOleadas = 8; // la cant maxima de oleadas del nivel
     public int oleadaInicial = 1; //oleada en la que comienza a instanciar enemigos
     public int oleadaActual = 1; //en que oleada me encuentro
     int cantidadEnemigos = 1;//este es el entero de los enemigos instanciados
@@ -36,11 +36,11 @@ public class ControlGenerador : MonoBehaviour
                     cantidadEnemigos = cantidadEnemigos / 2;
                 }
                 GeneradorEnemigos(cantidadEnemigos, prefabEnemigos);
-                if (oleadaActual >= 1)//Aqui si se llega a la oleada 2 se comienzan a instanciar los otros enemigos
+                if (oleadaActual >= 3)//Aqui si se llega a la oleada 2 se comienzan a instanciar los otros enemigos
                 {
                     GeneradorEnemigos(cantidadEnemigos, prefabEnemigos2);
                 }
-                if(oleadaActual >= 2)//Aqui aparece el Boss
+                if(oleadaActual >= 7)//Aqui aparece el Boss
                 {
                     GeneradorEnemigos2(1,prefabEnemigos3);
                 }
@@ -55,7 +55,7 @@ public class ControlGenerador : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("PARED"));
             }
 
-            if (oleadaActual == 5)//Funcion que te destruye las paredes
+            if (oleadaActual == 3)//Funcion que te destruye las paredes
             {
                 Destroy(GameObject.FindGameObjectWithTag("PARED 2"));
             }

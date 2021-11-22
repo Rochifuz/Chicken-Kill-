@@ -12,7 +12,7 @@ public class PlayerActions2 : MonoBehaviour, IDamage2
     public LayerMask ignoreLayer;//Ignorar la colision con el jugador
     RaycastHit hit;//Lanza un tiro desde, hacia(direccion) con un maximo de distancia 
     public float shotRateGlock = 1.5f;//Tiempo de disparo de Glock
-    public float shotRateUzi = 0.8f;//Tiempo de disparo de Uzi
+    public float shotRateUzi = 0.5f;//Tiempo de disparo de Uzi
     public float shotRateAk = 0.3f;//Tiempo de disparo de AK
     public float shotRateTime = 0;//Tiempo general de disparo
     public int numeroArma;//Contiene el numero de arma que tiene el player
@@ -84,7 +84,7 @@ public class PlayerActions2 : MonoBehaviour, IDamage2
                 if (Time.time > shotRateTime)
                 {
 
-                    shotRateTime = Time.time + shotRateUzi;
+                    shotRateTime = Time.time + shotRateGlock;
 
                     Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
                     Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
@@ -114,7 +114,7 @@ public class PlayerActions2 : MonoBehaviour, IDamage2
                 //le da una tiempo de recuperacion para volver a disparar
                 if (Time.time > shotRateTime)
                 {
-                    shotRateTime = Time.time + shotRateGlock;
+                    shotRateTime = Time.time + shotRateUzi;
 
                     Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
                     Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
