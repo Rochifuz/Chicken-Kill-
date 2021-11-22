@@ -8,11 +8,12 @@ public class VidaPlayer : MonoBehaviour
     public float vida = 100;
     
     public Image barradeVida;
-    
+
     //funcion de muerte
     void Die()
     {
-       Destroy(gameObject);        
+        Destroy(gameObject);        
+        
     }
     
     void Update()
@@ -22,9 +23,9 @@ public class VidaPlayer : MonoBehaviour
         if (vida == 0)
         {
             //Aca te va a mostrar si es que tu vida llega a 0, un cartel que perdiste y destruye el Game Object
-            Ganar.show1();
+            //Ganar.show1();
             Die();
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
 
 
         }

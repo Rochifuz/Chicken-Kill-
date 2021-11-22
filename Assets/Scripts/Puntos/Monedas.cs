@@ -16,6 +16,7 @@ public class Monedas : MonoBehaviour
             Destroy(gameObject);
         
     }
+
     private void Update()
     {
         transform.Rotate(x, y, z);

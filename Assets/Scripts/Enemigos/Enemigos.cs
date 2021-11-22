@@ -23,17 +23,11 @@ public class Enemigos : MonoBehaviour, IDamage
     public GameObject moneda;
     Vector3 posMon;
     Vector3 posPat;
-    
-    
-    
-    
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
-        
-
+  
     }
     // este codigo es el daño de la bala a las gallinas
     public void DoDamage(int vld, bool isPlayer)
@@ -72,10 +66,11 @@ public class Enemigos : MonoBehaviour, IDamage
     {
         target = GameObject.FindGameObjectWithTag("Player");
         target2 = GameObject.FindGameObjectWithTag("Player 2");
-        
+
         distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
         distanceToTarget2 = Vector3.Distance(transform.position, target2.transform.position);
         //distance calcula la distancia entre la gallina y nosotros
+
         if (distanceToTarget < distanceToTarget2)
         {
             //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
@@ -83,17 +78,19 @@ public class Enemigos : MonoBehaviour, IDamage
             transform.LookAt(posNoRot); //para que la gallina nos mire
             agent.SetDestination(target.transform.position); //para que la gallina nos persiga
         }
-        else
-            {
+
+        if (distanceToTarget2 < distanceToTarget)
+        {
             Vector3 posNoRot2 = new Vector3(target2.transform.position.x, transform.position.y, target2.transform.position.z);
             transform.LookAt(posNoRot2);
             agent.SetDestination(target2.transform.position);
-            }
-        
+        }
+
         if (transform.position.y < -10)
         {
             Destroy(gameObject); //se destruye la gallina si se cae 
         }
+
     }
 
     

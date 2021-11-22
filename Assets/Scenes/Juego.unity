@@ -20063,6 +20063,7 @@ GameObject:
   - component: {fileID: 897799675}
   - component: {fileID: 897799673}
   - component: {fileID: 897799677}
+  - component: {fileID: 897799669}
   m_Layer: 8
   m_Name: Player 2
   m_TagString: Player
@@ -20083,6 +20084,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.5957417, z: 1}
   m_Center: {x: 0, y: -0.1605432, z: 0}
+--- !u!114 &897799669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897799667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe4121e1f07cdc4cb11ebf13046e66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posGun: {fileID: 52666852}
+  cam: {fileID: 1971551072}
+  bulletPrefab: {fileID: 3036048398517494447, guid: e1dc902fbb64ba04784d6a1ecc697c6b, type: 3}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  shotRateGlock: 0.5
+  shotRateUzi: 0.8
+  shotRateAk: 0
+  shotRateTime: 0
+  numeroArma: 0
+  contador: 0
+  recordText: {fileID: 1171128160}
 --- !u!114 &897799671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20121,7 +20147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897799667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c69d46cf6580b4449850b1ba2da01485, type: 3}
   m_Name: 
@@ -49154,14 +49180,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1037109940}
     m_Modifications:
-    - target: {fileID: 3554965380443052128, guid: 1401fc6486184fe4a9b9e046e69ab172, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554965380443052128, guid: 1401fc6486184fe4a9b9e046e69ab172, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3554965380454254838, guid: 1401fc6486184fe4a9b9e046e69ab172, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.079676114

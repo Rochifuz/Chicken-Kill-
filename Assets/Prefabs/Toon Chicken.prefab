@@ -357,8 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b5d1c62be3b594fb14d973713e62c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  target2: {fileID: 0}
+  target: {fileID: 7405800612419977486, guid: df18c9382a2da104ead31ae90d90caa3, type: 3}
+  target2: {fileID: 3554965380454552726, guid: 1401fc6486184fe4a9b9e046e69ab172, type: 3}
   "da\xF1o": 10
   life: 15
   shootByPlayer: 0
