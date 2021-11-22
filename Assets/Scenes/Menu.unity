@@ -1399,7 +1399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &599364626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.5, y: -38.5}
+  m_AnchoredPosition: {x: 2.5, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610313509
@@ -1621,7 +1621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619193089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 67.3, y: -31}
+  m_AnchoredPosition: {x: 67.3, y: -212}
   m_SizeDelta: {x: 134.77545, y: -28.417648}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209358179
@@ -2169,25 +2169,52 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Con la tecla W, A , S, D  podra moverse.
+  m_text: 'Player 1:
 
-    Con la barra espaceadora 
-    podra saltar.
+    Con la tecla W, S,  podra moverse.
 
+    Con las teclas
+    A, D se podra rotar la camara
 
-    Con el boton izquierdo del mouse podra disparar.
+    Con la letra E podra saltar.
+
+    Con la letra
+    Q se podra disparar.
+
+    -------------------------------------------------
+
+    Player
+    2:
+
+    Con las flechas se podra mover
+
+    Con el mouse podra girar la camara
+
+    Con
+    el boton izquierdo del mouse podra disparar.
+
+    -------------------------------------------------
+
 
     Con
     la P se pausa el juego.
 
 
-    Las monedas suman 10 puntos y el maximo de puntos
-    conseguidos se guardan en el Record
+    -------------------------------------------------
+
+    Las
+    monedas suman 10 puntos y el maximo de puntos conseguidos se guardan en el Record
 
 
-    Las patas de pollos te curan al agarrarlas
-    10 de vida, en caso contrario desaparecen a los 5 seg
+    Las
+    patas de pollos te curan al agarrarlas 10 de vida, en caso contrario desaparecen
+    a los 5 seg
 
+
+    El juego durara 10 oleadas como maximo
+
+    A medida que pasamos
+    las oleadas se iran abriendo las parades.
 
 
 
@@ -3494,7 +3521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -119.1}
+  m_AnchoredPosition: {x: 550, y: -263}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2001270755
