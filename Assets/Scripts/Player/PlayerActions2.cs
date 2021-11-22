@@ -142,7 +142,7 @@ public class PlayerActions2 : MonoBehaviour, IDamage2
         Debug.Log("Recibi Daño = " + vld2 + "isPlayer = " + isPlayer2);
         if (isPlayer2 == false)//La bala que le pega no es un player, le quita daño en la vida
         {
-            gameObject.GetComponent<VidaPlayer>().vida -= vld2;
+            gameObject.GetComponent<VidaPlayer2>().vida -= vld2;
         }
 
     }

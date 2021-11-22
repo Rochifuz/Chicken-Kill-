@@ -34,7 +34,11 @@ public class Ganar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GetComponent<VidaPlayer>().vida == 0 && GetComponent<VidaPlayer2>().vida == 0)
+        {
+            show1();
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
     public static void show()
     //Esta funcion hace que te muestre un cartel cuando ganas
