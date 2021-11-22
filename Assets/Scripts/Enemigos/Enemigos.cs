@@ -59,7 +59,8 @@ public class Enemigos : MonoBehaviour, IDamage
     private void OnCollisionEnter (Collision collision)
     {
         Debug.Log("Gallina golpea = ");
-        collision.gameObject.GetComponent<VidaPlayer>().vida -= daño;              
+        collision.gameObject.GetComponent<VidaPlayer>().vida -= daño;
+        collision.gameObject.GetComponent<VidaPlayer2>().vida -= daño;
     }
     // Update is called once per frame
     void Update()
@@ -79,11 +80,26 @@ public class Enemigos : MonoBehaviour, IDamage
             agent.SetDestination(target.transform.position); //para que la gallina nos persiga
         }
 
-        if (distanceToTarget2 < distanceToTarget)
+        else
         {
             Vector3 posNoRot2 = new Vector3(target2.transform.position.x, transform.position.y, target2.transform.position.z);
             transform.LookAt(posNoRot2);
             agent.SetDestination(target2.transform.position);
+        }
+
+        if(GetComponent<VidaPlayer>().vida == 0)
+        {
+            Vector3 posNoRot2 = new Vector3(target2.transform.position.x, transform.position.y, target2.transform.position.z);
+            transform.LookAt(posNoRot2);
+            agent.SetDestination(target2.transform.position);
+        }
+
+        if(GetComponent<VidaPlayer2>().vida == 0)
+        {
+            //el posNoRot es para que las gallinas no giren todo su cuerpo hacia nosotros
+            Vector3 posNoRot = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+            transform.LookAt(posNoRot); //para que la gallina nos mire
+            agent.SetDestination(target.transform.position); //para que la gallina nos persiga
         }
 
         if (transform.position.y < -10)
