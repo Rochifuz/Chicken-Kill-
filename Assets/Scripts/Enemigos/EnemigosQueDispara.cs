@@ -42,7 +42,7 @@ public class EnemigosQueDispara : MonoBehaviour, IDamage
         if (isPlayer == true)
         {
             life -= vld;
-            if (life < 0)
+            if (life <= 0)
             {
                 Die();
             }

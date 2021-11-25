@@ -18,7 +18,7 @@ public class Ganar : MonoBehaviour
     void Start()
     {
         //Arrancan todos en falso
-            Ganar.ganarStatic = Cartelganar;
+        Ganar.ganarStatic = Cartelganar;
         Ganar.ganarStatic.gameObject.SetActive(false);
 
         Ganar.perderStatic = CartelPerder;
@@ -40,6 +40,7 @@ public class Ganar : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
     public static void show()
     //Esta funcion hace que te muestre un cartel cuando ganas
     {
