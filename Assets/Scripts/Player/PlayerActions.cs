@@ -81,7 +81,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
             if(Time.time > shotRateTime)
             {
             
-            shotRateTime = Time.time + shotRateGlock;
+            shotRateTime = Time.time + shotRateUzi;
             
             Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
@@ -108,7 +108,7 @@ public class PlayerActions : MonoBehaviour, IDamage2
             //le da una tiempo de recuperacion para volver a disparar
             if(Time.time > shotRateTime)
             {
-                shotRateTime = Time.time + shotRateUzi;
+                shotRateTime = Time.time + shotRateGlock;
             
             Vector3 direction = cam.TransformDirection(new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 1));
             Debug.DrawRay(cam.position, direction * 100f, Color.green, 5f);//muestra una linea de la bala
