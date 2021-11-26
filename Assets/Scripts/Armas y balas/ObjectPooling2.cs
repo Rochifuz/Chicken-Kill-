@@ -7,7 +7,7 @@ public class ObjectPooling2 : MonoBehaviour
     struct BulletInfos// aca se define el prefab de las balas que se utiliza y que script es el que usa la bala
     {
         public GameObject prefab;
-        public Bullet2 scriptBullet2;
+        public Bullet1 scriptBullet2;
     }
     public static ObjectPooling2 instance;
     public GameObject bulletPrefab;
@@ -26,12 +26,12 @@ public class ObjectPooling2 : MonoBehaviour
             BPrefab.prefab = Instantiate(bulletPrefab);
             BPrefab.prefab.transform.SetParent(transform);
             BPrefab.prefab.SetActive(false);
-            BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet2>();
+            BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet1>();
             bullets.Add(BPrefab);        
         }
     }
 
-    public GameObject GetBullet2(bool isPlayer2)//esto define si el disparo lo realizo un jugador o un enemigo
+    public GameObject GetBullet2(bool isPlayer)//esto define si el disparo lo realizo un jugador o un enemigo
     {
         int totalBullets = bullets.Count;
         for(int i=0; i<totalBullets; i++)
@@ -39,7 +39,7 @@ public class ObjectPooling2 : MonoBehaviour
             if(!bullets[i].prefab.activeInHierarchy)//Define si la bala la dispara un jugador o enemigo y si una bala se encuentra en false la pasa a true
             {
                 bullets[i].prefab.SetActive(true);
-                bullets[i].scriptBullet2.shootByPlayer2 = isPlayer2;
+                bullets[i].scriptBullet2.shootByPlayer = isPlayer;
                 return bullets[i].prefab;
             }
         }
@@ -48,8 +48,8 @@ public class ObjectPooling2 : MonoBehaviour
         BPrefab.prefab = Instantiate(bulletPrefab);
         BPrefab.prefab.transform.SetParent(transform);
         BPrefab.prefab.SetActive(true);
-        BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet2>();
-        BPrefab.scriptBullet2.shootByPlayer2 = isPlayer2;
+        BPrefab.scriptBullet2 = BPrefab.prefab.GetComponent<Bullet1>();
+        BPrefab.scriptBullet2.shootByPlayer = isPlayer;
         bullets.Add(BPrefab);
 
         return BPrefab.prefab;

@@ -7,7 +7,7 @@ public class ObjectPooling : MonoBehaviour
     struct BulletInfo// aca se define el prefab de las balas que se utiliza y que script es el que usa la bala
     {
         public GameObject prefab;
-        public Bullet scriptBullet;
+        public Bullet1 scriptBullet;
     }
     public static ObjectPooling instance;
     public GameObject bulletPrefab;
@@ -26,7 +26,7 @@ public class ObjectPooling : MonoBehaviour
             BPrefab.prefab = Instantiate(bulletPrefab);
             BPrefab.prefab.transform.SetParent(transform);
             BPrefab.prefab.SetActive(false);
-            BPrefab.scriptBullet = BPrefab.prefab.GetComponent<Bullet>();
+            BPrefab.scriptBullet = BPrefab.prefab.GetComponent<Bullet1>();
             bullets.Add(BPrefab);        
         }
     }
@@ -48,7 +48,7 @@ public class ObjectPooling : MonoBehaviour
         BPrefab.prefab = Instantiate(bulletPrefab);
         BPrefab.prefab.transform.SetParent(transform);
         BPrefab.prefab.SetActive(true);
-        BPrefab.scriptBullet = BPrefab.prefab.GetComponent<Bullet>();
+        BPrefab.scriptBullet = BPrefab.prefab.GetComponent<Bullet1>();
         BPrefab.scriptBullet.shootByPlayer = isPlayer;
         bullets.Add(BPrefab);
 

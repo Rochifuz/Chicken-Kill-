@@ -23,12 +23,12 @@ public class VidaPlayer : MonoBehaviour
     {
        vida = Mathf.Clamp(vida, 0, 100);//Esta funcion llena un valor entre un minimo y maximo
        barradeVida.fillAmount = vida / 100;//Ingresa a la propiedad de barra de vida llamada fill amount y calcula la vida actual sobre la vida maxima
-        if (vida == 0)
+        if (vida == 0 && GetComponent<VidaPlayer2>().vida == 0)
         {
             //Aca te va a mostrar si es que tu vida llega a 0, un cartel que perdiste y destruye el Game Object
-            //Ganar.show1();
+            Ganar.show1();
             Die();
-            //Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;
 
 
         }

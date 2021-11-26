@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  target2: {fileID: 0}
   weapon: {fileID: 7651738943637849739}
   "da\xF1o": 10
   distanciaDisparo: 10
